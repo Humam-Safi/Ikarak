@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "فيلا فاخرة مطلة على البحر",
+    "type": "فيلا",
+    "location": "الموقع 1, المدينة",
+    "price": "5,000,000 ل.س",
+    "image": "/src/assets/images/estate.jpg",
+    "bedrooms": 5,
+    "bathrooms": 2,
+    "area": "450 متر مربع",
+    "features": ["مسبح خاص", "حديقة واسعة", "إطلالة بحرية"]
+  },
+  {
+    "id": 2,
+    "title": "شقة حديثة في وسط المدينة",
+    "type": "شقة",
+    "location": "الموقع 2, المدينة",
+    "price": "1,200,000 ل.س",
+    "image": "/src/assets/images/estate.jpg",
+    "bedrooms": 3,
+    "bathrooms": 1,
+    "area": "150 متر مربع",
+    "features": ["شرفة", "موقف سيارات", "قريب من الخدمات"]
+  },
+  {
+    "id": 3,
+    "title": "أرض للبناء في منطقة هادئة",
+    "type": "أرض",
+    "location": "الموقع 3, المدينة",
+    "price": "800,000 ل.س",
+    "image": "/src/assets/images/estate.jpg",
+    "bedrooms": 4,
+    "bathrooms": 1,
+    "area": "600 متر مربع",
+    "features": ["موقع مميز", "جاهزة للبناء"]
+  }
+]
