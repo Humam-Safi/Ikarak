@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropertyCard from "../components/properties/PropertyCard";
-import SearchBar from "../components/common/SearchBar";
+import SearchBar from "../components/search/SearchBar";
 import FilterSidebar from "../components/properties/FilterSidebar";
 
 const Properties = () => {

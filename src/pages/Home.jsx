@@ -8,6 +8,7 @@ import {
   FaBuilding,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import PropertyCard from "./propertyCard";
 
 const Home = () => {
   return (
@@ -39,89 +40,9 @@ const Home = () => {
             عقارات مميزة
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Property Card 1 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="relative">
-                <div className="h-48 bg-gray-200"></div>
-                <span className="absolute top-2 right-2 bg-green-500 text-white px-3 py-1 rounded-full text-sm flex items-center gap-1">
-                  <FaStar className="text-yellow-300" />
-                  مالك حصري
-                </span>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">فيلا فاخرة</h3>
-                <p className="text-gray-600 mb-4 flex items-center gap-1">
-                  <FaMapMarkerAlt className="text-blue-500" />
-                  حمص، حي الزهراء
-                </p>
-                <div className="flex justify-between items-center">
-                  <span className="text-blue-600 font-semibold">$250,000</span>
-                  <Link
-                    to="/property-details"
-                    className="text-blue-600 hover:text-blue-800 flex items-center gap-1"
-                  >
-                    عرض التفاصيل
-                    <FaBuilding className="text-sm" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Property Card 2 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="relative">
-                <div className="h-48 bg-gray-200"></div>
-                <span className="absolute top-2 right-2 bg-blue-500 text-white px-3 py-1 rounded-full text-sm flex items-center gap-1">
-                  <FaBuilding className="text-white" />
-                  مكتب عقاري
-                </span>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">شقة حديثة</h3>
-                <p className="text-gray-600 mb-4 flex items-center gap-1">
-                  <FaMapMarkerAlt className="text-blue-500" />
-                  حمص، حي الإنشاءات
-                </p>
-                <div className="flex justify-between items-center">
-                  <span className="text-blue-600 font-semibold">$120,000</span>
-                  <Link
-                    to="/property-details"
-                    className="text-blue-600 hover:text-blue-800 flex items-center gap-1"
-                  >
-                    عرض التفاصيل
-                    <FaBuilding className="text-sm" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Property Card 3 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="relative">
-                <div className="h-48 bg-gray-200"></div>
-                <span className="absolute top-2 right-2 bg-green-500 text-white px-3 py-1 rounded-full text-sm flex items-center gap-1">
-                  <FaStar className="text-yellow-300" />
-                  مالك حصري
-                </span>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">أرض سكنية</h3>
-                <p className="text-gray-600 mb-4 flex items-center gap-1">
-                  <FaMapMarkerAlt className="text-blue-500" />
-                  حمص، حي الحمراء
-                </p>
-                <div className="flex justify-between items-center">
-                  <span className="text-blue-600 font-semibold">$80,000</span>
-                  <Link
-                    to="/property-details"
-                    className="text-blue-600 hover:text-blue-800 flex items-center gap-1"
-                  >
-                    عرض التفاصيل
-                    <FaBuilding className="text-sm" />
-                  </Link>
-                </div>
-              </div>
-            </div>
+            <PropertyCard title="شقة عصرية في وسط المدينة" type="مالك حصري" location="وسط المدينة، حمص" price="120,000 د.ل" />
+            <PropertyCard title="شقة عصرية في وسط المدينة" type="مكتب عقاري" location="وسط المدينة، حمص" price="120,000 د.ل" />
+            <PropertyCard title="شقة عصرية في وسط المدينة" type="مالك حصري" location="وسط المدينة، حمص" price="120,000 د.ل" />
           </div>
         </div>
       </section>
