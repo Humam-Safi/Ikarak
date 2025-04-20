@@ -17,7 +17,7 @@ const Home = () => {
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative max-w-7xl mx-auto px-[30px] h-full flex flex-col justify-center items-center text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            مرحباً بكم في عقارك حمص
+            مرحباً بكم في موقع عقارات حمصية
           </h1>
           <p className="text-xl text-white mb-8">
             شريكك الموثوق في مجال العقارات
