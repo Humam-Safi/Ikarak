@@ -6,34 +6,7 @@ import propertiesData from "../data/properties.json"; // Import the data
 
 const Properties = () => {
   // Use imported data, with sample data as fallback
-  const [properties] = useState(propertiesData.length > 0 ? propertiesData : [
-    {
-      id: 1,
-      title: "شقة عصرية في وسط المدينة",
-      type: "شقة",
-      location: "وسط المدينة، حمص",
-      price: "150,000 دولار",
-      bedrooms: 3,
-      bathrooms: 2,
-      area: 120,
-      image: "/images/properties/apartment1.jpg",
-      features: ["موقف سيارات", "شرفة", "حماية"],
-      amenities: ["مسبح", "نادي رياضي", "حماية 24/7"],
-    },
-    {
-      id: 2,
-      title: "فيلا فاخرة مع حديقة",
-      type: "فيلا",
-      location: "الوائري، حمص",
-      price: "250,000 دولار",
-      bedrooms: 4,
-      bathrooms: 3,
-      area: 200,
-      image: "/images/properties/villa1.jpg",
-      features: ["حديقة", "كراج", "حماية"],
-      amenities: ["حديقة خاصة", "مسبح", "موقف سيارات"],
-    },
-  ]);
+  const [properties] = useState(propertiesData)
 
   const [filters, setFilters] = useState({
     type: "all",
