@@ -1,13 +1,19 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../../assets/images/8a58f04b-80c2-4a84-a838-98f456a64eb8_removalai_preview.png"; // Updated import for the image
+=======
+import Logo from "./Logo";
+import { FaBars, FaTimes } from "react-icons/fa";
+>>>>>>> b9c3394a008875b0b021604e1f7187147dbae725
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="bg-white shadow-md">
+<<<<<<< HEAD
       <div className="max-w-7xl mx-auto px-[20px]">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
@@ -17,6 +23,13 @@ const Navbar = () => {
               marginRight: "5px",
             }} to="/" className="flex-shrink-0">
               <img src={logo} alt="Aqarat Homsia Logo" />
+=======
+      <div className="max-w-7xl mx-auto px-[30px]">
+        <div className="flex justify-between h-16">
+          <div className="flex items-center">
+            <Link to="/" className="flex-shrink-0">
+              <Logo />
+>>>>>>> b9c3394a008875b0b021604e1f7187147dbae725
             </Link>
           </div>
 
@@ -112,4 +125,8 @@ const Navbar = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Navbar;
+=======
+export default Navbar;
+>>>>>>> b9c3394a008875b0b021604e1f7187147dbae725
