@@ -20,8 +20,6 @@ const Home = () => {
     setProperties(propertiesData.properties);
   }, []);
 
-  console.log(properties);
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -89,6 +87,7 @@ const Home = () => {
             ))}
           </div>
         </div>
+
         <div className="max-w-7xl mx-auto px-[20px] mb-10">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
             عقارات قيد الانشاء

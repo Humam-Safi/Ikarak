@@ -76,11 +76,11 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="mt-8 text-center text-gray-400">
-          <p>© {new Date().getFullYear()} إكراك. جميع الحقوق محفوظة.</p>
+          <p>© {new Date().getFullYear()} عقارات حمصية. جميع الحقوق محفوظة.</p>
         </div>
       </div>
     </footer>
   );
 }
- 
+
 export default Footer;
