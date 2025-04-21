@@ -27,11 +27,11 @@ const PropertyCard = (props) => {
         <div className="grid grid-cols-3 gap-2 md:gap-4 mb-4 text-gray-600 text-sm md:text-base">
           <div className="flex items-center gap-1 md:gap-2">
             <FaBed className="text-blue-500" />
-            <span>{props.bedrooms} غرفة</span>
+            <span>{props.bedrooms}</span>
           </div>
           <div className="flex items-center gap-1 md:gap-2">
             <FaBath className="text-blue-500" />
-            <span>{props.bathrooms} حمامات</span>
+            <span>{props.bathrooms}</span>
           </div>
           <div className="flex items-center gap-1 md:gap-2">
             <FaRulerCombined className="text-blue-500" />

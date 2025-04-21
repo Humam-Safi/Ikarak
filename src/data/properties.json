@@ -9,7 +9,7 @@
       "image": "/src/assets/images/estate.jpg",
       "bedrooms": 5,
       "bathrooms": 2,
-      "area": "450 متر مربع",
+      "area": "450",
       "features": ["مسبح خاص", "حديقة واسعة", "إطلالة بحرية"]
     },
     {
@@ -21,7 +21,7 @@
       "image": "/src/assets/images/estate.jpg",
       "bedrooms": 3,
       "bathrooms": 1,
-      "area": "150 متر مربع",
+      "area": "150",
       "features": ["شرفة", "موقف سيارات", "قريب من الخدمات"]
     },
     {
@@ -33,7 +33,7 @@
       "image": "/src/assets/images/estate.jpg",
       "bedrooms": 4,
       "bathrooms": 1,
-      "area": "600 متر مربع",
+      "area": "600",
       "features": ["موقع مميز", "جاهزة للبناء"]
     }
   ]

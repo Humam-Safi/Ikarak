@@ -1,12 +1,16 @@
-import React, { useState } from "react";
-import PropertyCard from "../components/properties/PropertyCard";
+import React, { useEffect, useState } from "react";
 import SearchBar from "../components/common/SearchBar";
 import FilterSidebar from "../components/properties/FilterSidebar";
 import propertiesData from "../data/properties.json"; // Import the data
+import PropertyCard from "./propertyCard";
 
 const Properties = () => {
   // Use imported data, with sample data as fallback
-  const [properties] = useState(propertiesData)
+  const [properties, setProperties] = useState([]);
+
+  useEffect(() => {
+    setProperties(propertiesData.properties);
+  }, []);
 
   const [filters, setFilters] = useState({
     type: "all",
@@ -24,7 +28,7 @@ const Properties = () => {
 
       <div className="flex flex-col lg:flex-row gap-10">
         {/* Filter Sidebar */}
-        <div className="w-full lg:w-1/4 bg-white p-6 rounded-lg shadow-md border border-gray-200">
+        <div className="w-fit h-fit lg:w-1/4 bg-white p-6 rounded-lg shadow-md border border-gray-200">
           <FilterSidebar filters={filters} setFilters={setFilters} />
         </div>
 
@@ -32,9 +36,20 @@ const Properties = () => {
         <div className="w-full lg:w-3/4">
           <SearchBar className="mb-8" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-8">
             {properties.map((property) => (
-              <PropertyCard key={property.id} property={property} />
+              <PropertyCard
+                img={property.image}
+                key={property.id}
+                type={property.type}
+                location={property.location}
+                title={property.title}
+                price={property.price}
+                bedrooms={property.bedrooms}
+                bathrooms={property.bathrooms}
+                area={property.area}
+                features={property.features}
+              />
             ))}
           </div>
         </div>

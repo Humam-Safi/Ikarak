@@ -16,7 +16,7 @@ const SearchBar = ({ className = "", onSearch }) => {
           placeholder="ابحث عن عقارات..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 placeholder:p-[85px]"
         />
         <button
           type="submit"

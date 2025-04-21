@@ -6,7 +6,7 @@ const FilterSidebar = ({ filters, setFilters }) => {
   const bathroomOptions = ['أي', '1', '2', '3', '4+'];
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6">
+    <div className="bg-white rounded-lg shadow-md p-6 w-fit">
       <h3 className="text-lg font-bold mb-4">الفلترة</h3>
       
       <div className="space-y-6">
