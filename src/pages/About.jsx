@@ -1,6 +1,6 @@
 import profile1 from "../assets/images/profile.jpg";
 import profile2 from "../assets/images/daas.jpg";
-import logoImg from "../assets/images/Screenshot 2025-04-10 195541.png";
+import logoImg from "../assets/images/image.jpg";
 import { FaCheck, FaClock, FaMoneyBillWave, FaPhone } from "react-icons/fa";
 
 const About = () => {

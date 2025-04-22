@@ -54,7 +54,7 @@ const PropertyCard = (props) => {
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
             <span className="text-blue-600 font-semibold text-lg md:text-xl">{props.price}</span>
             <Link
-              to="/property-details"
+              to={`/property/${props.id}`}
               className="w-full sm:w-auto bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center gap-2 text-sm md:text-base"
             >
               عرض التفاصيل

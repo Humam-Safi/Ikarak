@@ -51,7 +51,7 @@ const Home = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {properties.map((property) => (
               <PropertyCard
-                img={property.image}
+                img={property.image[0]}
                 key={property.id}
                 type={property.type}
                 location={property.location}
@@ -61,6 +61,7 @@ const Home = () => {
                 bathrooms={property.bathrooms}
                 area={property.area}
                 features={property.features}
+                id={property.id}
               />
             ))}
           </div>
@@ -73,7 +74,7 @@ const Home = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {properties.map((property) => (
               <PropertyCard
-                img={property.image}
+                img={property.image[0]}
                 key={property.id}
                 type={property.type}
                 location={property.location}
@@ -83,6 +84,7 @@ const Home = () => {
                 bathrooms={property.bathrooms}
                 area={property.area}
                 features={property.features}
+                id={property.id}
               />
             ))}
           </div>
@@ -95,7 +97,7 @@ const Home = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {properties.map((property) => (
               <PropertyCard
-                img={property.image}
+                img={property.image[0]}
                 key={property.id}
                 type={property.type}
                 location={property.location}
@@ -105,6 +107,7 @@ const Home = () => {
                 bathrooms={property.bathrooms}
                 area={property.area}
                 features={property.features}
+                id={property.id}
               />
             ))}
           </div>

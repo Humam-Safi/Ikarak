@@ -39,7 +39,7 @@ const Properties = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-8">
             {properties.map((property) => (
               <PropertyCard
-                img={property.image}
+                img={property.image[0]}
                 key={property.id}
                 type={property.type}
                 location={property.location}
@@ -49,6 +49,7 @@ const Properties = () => {
                 bathrooms={property.bathrooms}
                 area={property.area}
                 features={property.features}
+                id={property.id}
               />
             ))}
           </div>
