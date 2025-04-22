@@ -36,12 +36,6 @@ const Navbar = () => {
               العقارات
             </Link>
             <Link
-              to="/property-details"
-              className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
-            >
-              تفاصيل العقار
-            </Link>
-            <Link
               to="/contact"
               className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
             >
@@ -87,12 +81,6 @@ const Navbar = () => {
               className="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200"
             >
               العقارات
-            </Link>
-            <Link
-              to="/property-details"
-              className="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200"
-            >
-              تفاصيل العقار
             </Link>
             <Link
               to="/contact"
