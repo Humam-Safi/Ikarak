@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Filter } from '../Context/filterContext';
 
 const FilterSidebar = ({ filters, setFilters }) => {
   const propertyTypes = ['الكل', 'شقة', 'منزل', 'فيلا', 'أرض', 'تجاري'];
   const bedroomOptions = ['أي', '1', '2', '3', '4', '5+'];
   const bathroomOptions = ['أي', '1', '2', '3', '4+'];
 
+  const { setFilter } = useContext(Filter)
+  setFilter(filters)
+  console.log(filters)
+
   return (
     <div className="bg-white rounded-lg shadow-md p-6 w-fit">
       <h3 className="text-lg font-bold mb-4">الفلترة</h3>
-      
+
       <div className="space-y-6">
         {/* Property Type */}
         <div>
