@@ -30,8 +30,6 @@ const Footer = () => {
               <li><a href="/terms" className="text-gray-300 hover:text-white">الشروط والأحكام</a></li>
               <li><a href="/faq" className="text-gray-300 hover:text-white">الأسئلة الشائعة</a></li>
               <li><a href="/blog" className="text-gray-300 hover:text-white">المدونة</a></li>
-              <li><a href="/careers" className="text-gray-300 hover:text-white">الوظائف</a></li>
-              <li><a href="/support" className="text-gray-300 hover:text-white">الدعم الفني</a></li>
             </ul>
           </div>
 

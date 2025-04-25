@@ -4,12 +4,13 @@ import FilterSidebar from "../components/properties/FilterSidebar";
 import propertiesData from "../data/properties.json"; // Import the data
 import PropertyCard from "./propertyCard";
 import { Filter } from "../components/Context/filterContext";
+import { Search } from "../components/Context/searchContext";
 
 const Properties = () => {
   const [properties, setProperties] = useState([]);
   const { filter } = useContext(Filter);
+  const {search} = useContext(Search)
 
-  console.log(propertiesData.properties);
 
   useEffect(() => {
     setProperties(propertiesData.properties.filter((property) => (
@@ -22,7 +23,10 @@ const Properties = () => {
       Number(property.price) <= Number(filter.priceRange[1])
     )));
   }, [filter]);
-  console.log(properties)
+
+  const mappedData = properties.filter((property) => {
+    return property.location.toLowerCase().includes(search.toLowerCase()) || property.title.toLowerCase().includes(search.toLowerCase());
+  });
 
   return (
     <div className="container mx-auto px-4 py-12 bg-gray-100 min-h-screen">
@@ -41,7 +45,7 @@ const Properties = () => {
           <SearchBar className="mb-8" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-8">
-            {properties.map((property) => (
+            {mappedData.map((property) => (
               <PropertyCard
                 img={property.image[0]}
                 key={property.id}

@@ -8,16 +8,21 @@ import {
   FaBuilding,
   FaMapMarkerAlt,
   FaPhone,
+  FaArrowRight,
 } from "react-icons/fa";
 import PropertyCard from "./propertyCard";
 import propertiesData from "../data/properties.json";
 import WhatWeDo from "./whatWeDo";
 
 const Home = () => {
-  const [properties, setProperties] = useState([]);
+  const [featuredProperties, setFeaturedProperties] = useState([]);
+  const [offerProperties, setOfferProperties] = useState([]);
+  const [newProperties, setNewProperties] = useState([]);
 
   useEffect(() => {
-    setProperties(propertiesData.properties);
+    setFeaturedProperties(propertiesData.properties.filter((property)=>property.state === "featured"));
+    setOfferProperties(propertiesData.properties.filter((property)=>property.state === "offer"));
+    setNewProperties(propertiesData.properties.filter((property)=>property.state === "new"));
   }, []);
 
   return (
@@ -49,7 +54,7 @@ const Home = () => {
             عقارات مميزة
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {properties.map((property) => (
+            {featuredProperties.slice(0, 3).map((property) => (
               <PropertyCard
                 img={property.image[0]}
                 key={property.id}
@@ -65,6 +70,12 @@ const Home = () => {
               />
             ))}
           </div>
+          <Link
+            to="/featured-properties"
+            className="mt-8 bg-blue-600 text-white px-6 py-2 rounded-md flex items-center gap-2 w-fit mx-auto hover:bg-blue-700 transition duration-300"
+          >
+            عرض الكل <FaArrowRight />
+          </Link>
         </div>
 
         <div className="max-w-7xl mx-auto px-[20px] mb-10">
@@ -72,7 +83,7 @@ const Home = () => {
             عروض حصرية
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {properties.map((property) => (
+            {offerProperties.slice(0, 3).map((property) => (
               <PropertyCard
                 img={property.image[0]}
                 key={property.id}
@@ -88,6 +99,12 @@ const Home = () => {
               />
             ))}
           </div>
+          <Link
+            to="/offer-properties"
+            className="mt-8 bg-blue-600 text-white px-6 py-2 rounded-md flex items-center gap-2 w-fit mx-auto hover:bg-blue-700 transition duration-300"
+          >
+            عرض الكل <FaArrowRight />
+          </Link>
         </div>
 
         <div className="max-w-7xl mx-auto px-[20px] mb-10">
@@ -95,7 +112,7 @@ const Home = () => {
             عقارات قيد الانشاء
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {properties.map((property) => (
+            {newProperties.slice(0, 3).map((property) => (
               <PropertyCard
                 img={property.image[0]}
                 key={property.id}
@@ -111,6 +128,12 @@ const Home = () => {
               />
             ))}
           </div>
+          <Link
+            to="/new-properties"
+            className="mt-8 bg-blue-600 text-white px-6 py-2 rounded-md flex items-center gap-2 w-fit mx-auto hover:bg-blue-700 transition duration-300"
+          >
+            عرض الكل <FaArrowRight />
+          </Link>
         </div>
       </section>
 

@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
+import { Search } from "../Context/searchContext";
 
 const SearchBar = ({ className = "", onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
+  const { setSearch } = useContext(Search);
+  setSearch(searchTerm)
+
 
   const handleSubmit = (e) => {
     e.preventDefault();

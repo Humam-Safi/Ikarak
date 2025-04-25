@@ -12,6 +12,9 @@ import FAQ from "./pages/FAQ";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./services/TermsOfService";
 import Footer from "./components/layout/Footer";
+import FeaturedProperties from "./components/properties/featuredProperties";
+import OfferProperties from "./components/properties/offerProperties";
+import NewProperties from "./components/properties/newProperties";
 
 function App() {
   return (
@@ -22,6 +25,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/properties" element={<Properties />} />
+            <Route path="/featured-properties" element={<FeaturedProperties />} />
+            <Route path="/offer-properties" element={<OfferProperties />} />
+            <Route path="/new-properties" element={<NewProperties />} />
             <Route path="/property/:id" element={<PropertyDetails />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
