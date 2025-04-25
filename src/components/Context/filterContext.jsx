@@ -4,9 +4,15 @@ import { useState } from 'react';
 export const Filter = createContext(null);
 
 const FilterContext = ({ children }) => {
-    const [fitler, setFitler] = useState([])
+    const [filter, setFilter] = useState({
+      type: "الكل",
+      priceRange: [5000, 5000000],
+      bedrooms: "أي",
+      bathrooms: "أي",
+      area: [0, 500], // Adjusted max area based on data
+    });
     return (
-        <Filter.Provider value={{ fitler, setFitler }}>
+        <Filter.Provider value={{ filter, setFilter }}>
             {children}
         </Filter.Provider>
     );
