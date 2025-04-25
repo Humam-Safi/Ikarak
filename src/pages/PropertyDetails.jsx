@@ -1,68 +1,129 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import PropertyGallery from "../components/properties/PropertyGallery";
-import PropertyInfo from "../components/properties/PropertyInfo";
-import ContactForm from "../components/forms/ContactForm";
+import ImageGallery from "react-image-gallery";
+import "react-image-gallery/styles/css/image-gallery.css";
+import PropertyCard from "./propertyCard";
+import propertiesData from "../data/properties.json";
+import Map from "../components/common/Map";
 
 const PropertyDetails = () => {
   const { id } = useParams();
   const [property, setProperty] = useState(null);
+  const [properties, setProperties] = useState([]);
+  const [relatedProperties, setRelatedProperties] = useState([]);
 
   useEffect(() => {
-    // In a real application, you would fetch the property data from an API
-    const sampleProperty = {
-      id: 1,
-      title: "شقة عصرية في وسط المدينة",
-      type: "شقة",
-      location: "وسط المدينة، حمص",
-      price: "150,000 دولار",
-      bedrooms: 3,
-      bathrooms: 2,
-      area: 120,
-      images: [
-        "/images/properties/apartment1.jpg",
-        "/images/properties/apartment2.jpg",
-        "/images/properties/apartment3.jpg",
-      ],
-      features: ["موقف سيارات", "شرفة", "حماية"],
-      amenities: ["مسبح", "نادي رياضي", "حماية 24/7"],
-      description:
-        "هذه الشقة العصرية تقع في قلب وسط مدينة حمص. تتميز بغرف فسيحة ومطبخ عصري وشرفة جميلة مع إطلالة على المدينة. المبنى يشمل حماية على مدار الساعة وهو قريب من جميع المرافق.",
-    };
+    setProperties(propertiesData.properties);
+  }, []);
 
-    setProperty(sampleProperty);
-  }, [id]);
+  useEffect(() => {
+    const selectedProperty = properties.find((property) => property.id === Number(id));
+    setProperty(selectedProperty);
+
+    // Find related properties with the same location
+    if (selectedProperty) {
+      const related = properties.filter(
+        (p) => p.location === selectedProperty.location && p.id !== selectedProperty.id
+      );
+      setRelatedProperties(related);
+    }
+  }, [id, properties]);
+
+  if (!property) {
+    return <div className="container mx-auto px-4 py-8">Loading...</div>;
+  }
+
+  const images = property.image.map(img => ({
+    original: img,
+    thumbnail: img
+  })) || [];
 
   return (
     <div className="container mx-auto px-4 py-8">
-      {property ? (
-        <>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Main Content */}
-            <div className="lg:col-span-2">
-              <PropertyGallery images={property.images} />
-              <PropertyInfo property={property} />
-            </div>
+      {/* Main Content */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        {/* Right Side - Image Gallery */}
+        <div className="order-1 md:order-2">
+          <ImageGallery
+            items={images}
+            showPlayButton={false}
+            showFullscreenButton={true}
+            showNav={true}
+          />
+        </div>
 
-            {/* Sidebar */}
-            <div className="lg:col-span-1">
-              <div className="bg-white rounded-lg shadow-md p-6 sticky top-4">
-                <h3 className="text-xl font-bold mb-4 font-arabic">
-                  اتصل بالوكيل
-                </h3>
-                <ContactForm propertyId={id} />
-              </div>
+        {/* Left Side - Property Details */}
+        <div className="order-2 md:order-1 bg-white p-6 rounded-lg shadow-lg">
+          <h1 className="text-3xl font-bold mb-4">{property.title}</h1>
+          <p className="text-2xl font-bold text-blue-600 mb-4">{Number(property.price).toLocaleString()}$</p>
+          <p className="text-lg text-gray-600 mb-6">{property.location}</p>
+
+          <div className="grid grid-cols-2 gap-4 mb-6">
+            <div className="border p-3 rounded">
+              <span className="font-bold">النوع:</span> {property.type}
+            </div>
+            <div className="border p-3 rounded">
+              <span className="font-bold">المساحة:</span> {property.area} م²
+            </div>
+            <div className="border p-3 rounded">
+              <span className="font-bold">غرف النوم:</span> {property.bedrooms}
+            </div>
+            <div className="border p-3 rounded">
+              <span className="font-bold">الحمامات:</span> {property.bathrooms}
             </div>
           </div>
-        </>
-      ) : (
-        <div className="text-center py-12">
-          <h2 className="text-2xl font-bold font-arabic">العقار غير موجود</h2>
-          <p className="text-gray-600 font-arabic">
-            العقار الذي تبحث عنه غير موجود أو تم إزالته.
-          </p>
+
+          <div className="mb-6">
+            <h2 className="text-xl font-bold mb-3">المميزات</h2>
+            <ul className="list-disc list-inside">
+              {property.features?.map((feature, index) => (
+                <li key={index} className="text-gray-700">{feature}</li>
+              ))}
+            </ul>
+          </div>
         </div>
-      )}
+      </div>
+
+      {/* Map and Additional Info */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        {/* Map */}
+        <div className="bg-white p-6 rounded-lg shadow-lg h-[450px]">
+          {/* Add your map component here */}
+          <div className="h-full bg-gray-200 rounded">
+            <Map />
+          </div>
+        </div>
+
+        {/* Additional Info */}
+        <div className="bg-white p-6 rounded-lg shadow-lg">
+          <h2 className="text-2xl font-bold mb-4">معلومات إضافية</h2>
+          <div className="space-y-4">
+            <p className="text-gray-700">{property.description}</p>
+            {/* Add more property details here */}
+          </div>
+        </div>
+      </div>
+
+      {/* Related Properties */}
+      <div className="mt-12">
+        <h2 className="text-2xl font-bold mb-6">عقارات مشابهة</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {relatedProperties.map((relatedProperty) => (
+            <PropertyCard
+              key={relatedProperty.id}
+              img={relatedProperty.image[0]}
+              type={relatedProperty.type}
+              location={relatedProperty.location}
+              title={relatedProperty.title}
+              price={relatedProperty.price}
+              bedrooms={relatedProperty.bedrooms}
+              bathrooms={relatedProperty.bathrooms}
+              area={relatedProperty.area}
+              features={relatedProperty.features}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

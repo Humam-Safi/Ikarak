@@ -37,7 +37,7 @@ const Navbar = () => {
             </Link>
             <Link
               to="/property-details"
-              className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
+              className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium"
             >
               تفاصيل العقار
             </Link>
@@ -90,7 +90,7 @@ const Navbar = () => {
             </Link>
             <Link
               to="/property-details"
-              className="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200"
+              className="block text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium"
             >
               تفاصيل العقار
             </Link>

@@ -5,9 +5,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About Section */}
           <div>
-            <h3 className="text-xl font-bold mb-4">عن إكراك</h3>
+            <h3 className="text-xl font-bold mb-4">عن عقارات حمصية</h3>
             <p className="text-gray-300">
-              منصة إكراك هي منصة رقمية متكاملة تهدف إلى دعم وتطوير المواهب الإبداعية في العالم العربي
+              منصة عقارات حمصية هي منصة رقمية متكاملة تهدف إلى دعم وتطوير تجارة العقارات الالكترونية
             </p>
           </div>
 
@@ -43,10 +43,10 @@ const Footer = () => {
                 <span className="ml-2">البريد الإلكتروني: info@ikarak.com</span>
               </li>
               <li className="flex items-center">
-                <span className="ml-2">الهاتف: +966 12 345 6789</span>
+                <span className="ml-2">الهاتف: +963 933333333</span>
               </li>
               <li className="flex items-center">
-                <span className="ml-2">العنوان: الرياض، المملكة العربية السعودية</span>
+                <span className="ml-2">العنوان: سوريا , حمص</span>
               </li>
             </ul>
           </div>
@@ -76,11 +76,11 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="mt-8 text-center text-gray-400">
-          <p>© {new Date().getFullYear()} إكراك. جميع الحقوق محفوظة.</p>
+          <p>© {new Date().getFullYear()} عقارات حمصية. جميع الحقوق محفوظة.</p>
         </div>
       </div>
     </footer>
   );
 }
- 
+
 export default Footer;

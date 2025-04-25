@@ -4,36 +4,54 @@
       "id": 1,
       "title": "فيلا فاخرة مطلة على البحر",
       "type": "فيلا",
-      "location": "الموقع 1, المدينة",
-      "price": "5,000,000 ل.س",
-      "image": "/src/assets/images/estate.jpg",
+      "location": "سوريا ,حمص , الغوطة",
+      "latitude": 34.732750,
+      "longitude": 36.699971,
+      "price": 5000000,
+      "image": [
+        "/src/assets/images/estate.jpg",
+        "/src/assets/images/estate.jpg",
+        "/src/assets/images/estate.jpg"
+      ],
       "bedrooms": 5,
       "bathrooms": 2,
-      "area": "450 متر مربع",
+      "area": 450,
       "features": ["مسبح خاص", "حديقة واسعة", "إطلالة بحرية"]
     },
     {
       "id": 2,
       "title": "شقة حديثة في وسط المدينة",
       "type": "شقة",
-      "location": "الموقع 2, المدينة",
-      "price": "1,200,000 ل.س",
-      "image": "/src/assets/images/estate.jpg",
+      "location": "الموقع 1, المدينة",
+      "latitude": 31.9545,
+      "longitude": 35.9095,
+      "price": 1200000,
+      "image": [
+        "/src/assets/images/The-Importance-of-High-Quality-Real-Estate-Photos-v3.webp",
+        "/src/assets/images/The-Importance-of-High-Quality-Real-Estate-Photos-v3.webp",
+        "/src/assets/images/The-Importance-of-High-Quality-Real-Estate-Photos-v3.webp"
+      ],
       "bedrooms": 3,
       "bathrooms": 1,
-      "area": "150 متر مربع",
+      "area": 150,
       "features": ["شرفة", "موقف سيارات", "قريب من الخدمات"]
     },
     {
       "id": 3,
       "title": "أرض للبناء في منطقة هادئة",
       "type": "أرض",
-      "location": "الموقع 3, المدينة",
-      "price": "800,000 ل.س",
-      "image": "/src/assets/images/estate.jpg",
+      "location": "الموقع 1, المدينة",
+      "latitude": 31.9545,
+      "longitude": 35.9095,
+      "price": 800000,
+      "image": [
+        "/src/assets/images/OIP (2).jpeg",
+        "/src/assets/images/OIP (2).jpeg",
+        "/src/assets/images/OIP (2).jpeg"
+      ],
       "bedrooms": 4,
       "bathrooms": 1,
-      "area": "600 متر مربع",
+      "area": 100,
       "features": ["موقع مميز", "جاهزة للبناء"]
     }
   ]

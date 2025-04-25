@@ -20,8 +20,6 @@ const Home = () => {
     setProperties(propertiesData.properties);
   }, []);
 
-  console.log(properties);
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -53,7 +51,7 @@ const Home = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {properties.map((property) => (
               <PropertyCard
-                img={property.image}
+                img={property.image[0]}
                 key={property.id}
                 type={property.type}
                 location={property.location}
@@ -63,6 +61,7 @@ const Home = () => {
                 bathrooms={property.bathrooms}
                 area={property.area}
                 features={property.features}
+                id={property.id}
               />
             ))}
           </div>
@@ -75,7 +74,7 @@ const Home = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {properties.map((property) => (
               <PropertyCard
-                img={property.image}
+                img={property.image[0]}
                 key={property.id}
                 type={property.type}
                 location={property.location}
@@ -85,10 +84,12 @@ const Home = () => {
                 bathrooms={property.bathrooms}
                 area={property.area}
                 features={property.features}
+                id={property.id}
               />
             ))}
           </div>
         </div>
+
         <div className="max-w-7xl mx-auto px-[20px] mb-10">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
             عقارات قيد الانشاء
@@ -96,7 +97,7 @@ const Home = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {properties.map((property) => (
               <PropertyCard
-                img={property.image}
+                img={property.image[0]}
                 key={property.id}
                 type={property.type}
                 location={property.location}
@@ -106,6 +107,7 @@ const Home = () => {
                 bathrooms={property.bathrooms}
                 area={property.area}
                 features={property.features}
+                id={property.id}
               />
             ))}
           </div>
