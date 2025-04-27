@@ -29,7 +29,6 @@ const Footer = () => {
               <li><a href="/privacy-policy" className="text-gray-300 hover:text-white">سياسة الخصوصية</a></li>
               <li><a href="/terms" className="text-gray-300 hover:text-white">الشروط والأحكام</a></li>
               <li><a href="/faq" className="text-gray-300 hover:text-white">الأسئلة الشائعة</a></li>
-              <li><a href="/blog" className="text-gray-300 hover:text-white">المدونة</a></li>
             </ul>
           </div>
 

@@ -7,7 +7,6 @@ import Properties from "./pages/Properties";
 import PropertyDetails from "./pages/PropertyDetails";
 import Contact from "./pages/Contact";
 import Services from "./services/Services";
-import Blog from "./pages/Blog";
 import FAQ from "./pages/FAQ";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./services/TermsOfService";
@@ -32,7 +31,6 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/blog" element={<Blog />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
