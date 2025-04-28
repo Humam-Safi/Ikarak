@@ -14,9 +14,13 @@ const PropertyCard = (props) => {
           />
         </div>
         <span style={{
-          color: "#0F2460",
-          fontSize: "12px",
           
+          fontSize: "14px",
+          fontWeight: "500",
+          backgroundColor: "#0f2560da",
+          color: "#fff",
+          padding: "5px 10px",
+
         }} className="absolute top-2 right-2 bg-yellow-100  px-3 py-1 rounded-full text-sm flex items-center gap-1">
           <FaStar className="text-yellow-300" />
           {props.type}
