@@ -105,21 +105,9 @@ const Contact = () => {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes slideIn {
-          from {
-            opacity: 0;
-            transform: translateY(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-slideIn {
-          animation: slideIn 0.8s ease-out;
-        }
-      `}</style>
+      {/* Add Tailwind animation classes directly if needed, or define in global CSS */}
+      {/* Example: Add 'animate-slideIn' class to the h1 element above */}
+      {/* The keyframes for slideIn would need to be defined in your global CSS or Tailwind config */}
     </div>
   );
 };
