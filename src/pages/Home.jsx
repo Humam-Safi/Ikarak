@@ -20,9 +20,9 @@ const Home = () => {
   const [newProperties, setNewProperties] = useState([]);
 
   useEffect(() => {
-    setFeaturedProperties(propertiesData.properties.filter((property)=>property.state === "featured"));
-    setOfferProperties(propertiesData.properties.filter((property)=>property.state === "offer"));
-    setNewProperties(propertiesData.properties.filter((property)=>property.state === "new"));
+    setFeaturedProperties(propertiesData.properties.filter((property) => property.state === "featured"));
+    setOfferProperties(propertiesData.properties.filter((property) => property.state === "offer"));
+    setNewProperties(propertiesData.properties.filter((property) => property.state === "new"));
   }, []);
 
   return (
@@ -72,7 +72,7 @@ const Home = () => {
           </div>
           <Link
             to="/featured-properties"
-            className="mt-8 bg-blue-600 text-white px-6 py-2 rounded-md flex items-center gap-2 w-fit mx-auto hover:bg-blue-700 transition duration-300"
+            className="mt-8 bg-sky-900 hover:bg-sky-700 text-white px-6 py-2 rounded-md flex items-center gap-2 w-fit mx-auto transition duration-300"
           >
             عرض الكل <FaArrowRight />
           </Link>
@@ -101,7 +101,7 @@ const Home = () => {
           </div>
           <Link
             to="/offer-properties"
-            className="mt-8 bg-blue-600 text-white px-6 py-2 rounded-md flex items-center gap-2 w-fit mx-auto hover:bg-blue-700 transition duration-300"
+            className="mt-8 bg-sky-900  hover:bg-sky-700 text-white px-6 py-2 rounded-md flex items-center gap-2 w-fit mx-auto  transition duration-300"
           >
             عرض الكل <FaArrowRight />
           </Link>
@@ -130,7 +130,7 @@ const Home = () => {
           </div>
           <Link
             to="/new-properties"
-            className="mt-8 bg-blue-600 text-white px-6 py-2 rounded-md flex items-center gap-2 w-fit mx-auto hover:bg-blue-700 transition duration-300"
+            className="mt-8 bg-sky-900 text-white px-6 py-2 rounded-md flex items-center gap-2 w-fit mx-auto hover:bg-sky-700 transition duration-300"
           >
             عرض الكل <FaArrowRight />
           </Link>
@@ -141,7 +141,7 @@ const Home = () => {
       <WhatWeDo />
 
       {/* Call to Action Section */}
-      <section className="py-16 bg-blue-600">
+      <section className="py-16 bg-sky-900">
         <div className="max-w-7xl mx-auto px-[30px] text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             هل تبحث عن عقار أحلامك؟
@@ -151,7 +151,7 @@ const Home = () => {
           </p>
           <Link
             to="/contact"
-            className="bg-white text-blue-600 px-8 py-3 rounded-md text-lg font-semibold hover:bg-gray-100 transition duration-300 flex items-center gap-2 justify-center mx-auto w-fit"
+            className="text-white bg-sky-700 px-8 py-3 rounded-md text-lg font-semibold hover:bg-sky-600 transition duration-300 flex items-center gap-2 justify-center mx-auto w-fit"
           >
             <FaPhone className="text-xl" />
             اتصل بنا
@@ -163,3 +163,4 @@ const Home = () => {
 };
 
 export default Home;
+0

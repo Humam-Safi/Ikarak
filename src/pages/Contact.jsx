@@ -100,14 +100,11 @@ const Contact = () => {
             موقعنا
           </h2>
           <div className="bg-white rounded-2xl shadow-xl p-4 hover:shadow-2xl transition-all duration-500 ease-out backdrop-blur-sm bg-opacity-90">
-            <Map properties={propertiesData.properties} /> {/* Pass properties data */} 
+            <Map properties={propertiesData.properties} /> {/* Pass properties data */}
           </div>
         </div>
       </div>
 
-      {/* Add Tailwind animation classes directly if needed, or define in global CSS */}
-      {/* Example: Add 'animate-slideIn' class to the h1 element above */}
-      {/* The keyframes for slideIn would need to be defined in your global CSS or Tailwind config */}
     </div>
   );
 };
