@@ -3,36 +3,46 @@ import SearchBar from "../components/common/SearchBar";
 import FilterSidebar from "../components/properties/FilterSidebar";
 import propertiesData from "../data/properties.json"; // Import the data
 import PropertyCard from "./propertyCard";
-import { Filter } from "../components/Context/filterContext";
-import { Search } from "../components/Context/searchContext";
+import { Filter } from "../Context/filterContext";
+import { Search } from "../Context/searchContext";
 
 const Properties = () => {
   const [properties, setProperties] = useState([]);
   const { filter } = useContext(Filter);
-  const {search} = useContext(Search)
-
+  const { search } = useContext(Search);
 
   useEffect(() => {
-    setProperties(propertiesData.properties.filter((property) => (
-      (filter.type === "الكل" || property.type === filter.type) &&
-      (filter.bedrooms === "أي" || Number(property.bedrooms) >= Number(filter.bedrooms.replace('+', ''))) && 
-      (filter.bathrooms === "أي" || Number(property.bathrooms) >= Number(filter.bathrooms.replace('+', ''))) && 
-      Number(property.area) >= filter.area[0] &&
-      Number(property.area) <= filter.area[1] &&
-      Number(property.price) >= Number(filter.priceRange[0]) &&
-      Number(property.price) <= Number(filter.priceRange[1])
-    )));
+    setProperties(
+      propertiesData.properties.filter(
+        (property) =>
+          (filter.type === "الكل" || property.type === filter.type) &&
+          (filter.bedrooms === "أي" ||
+            Number(property.bedrooms) >=
+              Number(filter.bedrooms.replace("+", ""))) &&
+          (filter.bathrooms === "أي" ||
+            Number(property.bathrooms) >=
+              Number(filter.bathrooms.replace("+", ""))) &&
+          Number(property.area) >= filter.area[0] &&
+          Number(property.area) <= filter.area[1] &&
+          Number(property.price) >= Number(filter.priceRange[0]) &&
+          Number(property.price) <= Number(filter.priceRange[1])
+      )
+    );
   }, [filter]);
 
   const mappedData = properties.filter((property) => {
-    return property.location.toLowerCase().includes(search.toLowerCase()) || property.title.toLowerCase().includes(search.toLowerCase());
+    return (
+      property.location.toLowerCase().includes(search.toLowerCase()) ||
+      property.title.toLowerCase().includes(search.toLowerCase())
+    );
   });
 
   return (
     <div className="container mx-auto px-4 py-12 bg-gray-100 min-h-screen">
-      <h1 className="text-5xl font-extrabold text-center mb-10 font-arabic text-blue-800">
+      <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-4 font-arabic bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-sky-900 animate-slideIn">
         العقارات المتاحة
       </h1>
+      <div className="w-32 h-0.5 mx-auto mb-8 bg-gradient-to-r from-sky-600  to-sky-900 rounded-full shadow-md"></div>
 
       <div className="flex flex-col lg:flex-row gap-10">
         {/* Filter Sidebar */}

@@ -14,21 +14,21 @@ const Contact = () => {
 
       <div className="relative z-10 container mx-auto">
         {/* Header */}
-        <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-4 font-arabic bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800 animate-slideIn">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-4 font-arabic bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-sky-900 animate-slideIn">
           تواصل معنا
         </h1>
-        <div className="w-32 h-0.5 mx-auto mb-8 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 rounded-full shadow-md"></div>
+        <div className="w-32 h-0.5 mx-auto mb-8 bg-gradient-to-r from-sky-600  to-sky-900 rounded-full shadow-md"></div>
 
         <div className="grid grid-cols-1 gap-6">
           {/* Contact Information */}
           <div className="bg-white rounded-2xl shadow-xl p-6 transform hover:scale-[1.02] transition-all duration-500 ease-out backdrop-blur-sm bg-opacity-90">
-            <h2 className="text-2xl font-bold mb-6 text-gray-800 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+            <h2 className="text-2xl font-bold mb-6 text-gray-800 bg-gradient-to-r from-sky-600 to-sky-900 bg-clip-text text-transparent">
               معلومات التواصل
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="group flex items-center gap-3">
                 <div className="p-2 bg-blue-100 rounded-full group-hover:bg-blue-200 transition-colors duration-300">
-                  <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-sky-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
@@ -40,7 +40,7 @@ const Contact = () => {
               </div>
               <div className="group flex items-center gap-3">
                 <div className="p-2 bg-blue-100 rounded-full group-hover:bg-blue-200 transition-colors duration-300">
-                  <FaPhone className="text-lg text-blue-600" />
+                  <FaPhone className="text-lg text-sky-900" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-800 text-sm">الهاتف</h3>
@@ -49,7 +49,7 @@ const Contact = () => {
               </div>
               <div className="group flex items-center gap-3">
                 <div className="p-2 bg-blue-100 rounded-full group-hover:bg-blue-200 transition-colors duration-300">
-                  <FaEnvelope className="text-lg text-blue-600" />
+                  <FaEnvelope className="text-lg text-sky-900" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-800 text-sm">البريد الإلكتروني</h3>
@@ -58,7 +58,7 @@ const Contact = () => {
               </div>
               <div className="group flex items-center gap-3">
                 <div className="p-2 bg-blue-100 rounded-full group-hover:bg-blue-200 transition-colors duration-300">
-                  <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-sky-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
@@ -70,16 +70,16 @@ const Contact = () => {
               </div>
             </div>
             <div className="mt-6">
-              <h3 className="font-semibold text-gray-800 text-sm mb-3">تابعنا</h3>
+              <h3 className="font-semibold text-sky-900 text-sm mb-3">تابعنا</h3>
               <div className="flex gap-4">
                 <a href="https://wa.me/+963123456789" target="_blank" rel="noopener noreferrer" className="group">
-                  <FaWhatsapp className="text-2xl text-blue-600 group-hover:text-blue-800 group-hover:scale-125 transform transition-all duration-300" />
+                  <FaWhatsapp className="text-2xl text-sky-900 group-hover:text-blue-800 group-hover:scale-125 transform transition-all duration-300" />
                 </a>
                 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="group">
-                  <FaInstagram className="text-2xl text-blue-600 group-hover:text-blue-800 group-hover:scale-125 transform transition-all duration-300" />
+                  <FaInstagram className="text-2xl text-sky-900 group-hover:text-blue-800 group-hover:scale-125 transform transition-all duration-300" />
                 </a>
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="group">
-                  <FaFacebook className="text-2xl text-blue-600 group-hover:text-blue-800 group-hover:scale-125 transform transition-all duration-300" />
+                  <FaFacebook className="text-2xl text-sky-900 group-hover:text-blue-800 group-hover:scale-125 transform transition-all duration-300" />
                 </a>
               </div>
             </div>
@@ -87,7 +87,7 @@ const Contact = () => {
               href="https://wa.me/+963123456789"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 block w-full bg-gradient-to-r from-blue-500 to-blue-700 text-white text-center py-3 rounded-xl font-semibold text-base hover:from-blue-600 hover:to-blue-800 hover:scale-105 transform transition-all duration-300 shadow-lg"
+              className="mt-6 block w-full bg-sky-900 text-white text-center py-3 rounded-xl font-semibold text-base  transform transition-all duration-300 shadow-lg"
             >
               تواصل معنا الآن
             </a>
@@ -96,7 +96,7 @@ const Contact = () => {
 
         {/* Map */}
         <div className="mt-8">
-          <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
+          <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center bg-gradient-to-r from-sky-600 to-sky-900 bg-clip-text text-transparent">
             موقعنا
           </h2>
           <div className="bg-white rounded-2xl shadow-xl p-4 hover:shadow-2xl transition-all duration-500 ease-out backdrop-blur-sm bg-opacity-90">

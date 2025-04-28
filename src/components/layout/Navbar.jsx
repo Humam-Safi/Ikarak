@@ -25,26 +25,26 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Link
               to="/"
-              className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
+              className="text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
             >
               الرئيسية
             </Link>
             <Link
               to="/properties"
-              className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
+              className="text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
             >
               العقارات
             </Link>
 
             <Link
               to="/contact"
-              className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
+              className="text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
             >
               اتصل بنا
             </Link>
             <Link
               to="/about"
-              className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
+              className="text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
             >
               من نحن
             </Link>
@@ -73,26 +73,26 @@ const Navbar = () => {
           <div className="px-4 pt-2 pb-3 space-y-1">
             <Link
               to="/"
-              className="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200"
+              className="block text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200"
             >
               الرئيسية
             </Link>
             <Link
               to="/properties"
-              className="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200"
+              className="block text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200"
             >
               العقارات
             </Link>
 
             <Link
               to="/contact"
-              className="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200"
+              className="block text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200"
             >
               اتصل بنا
             </Link>
             <Link
               to="/about"
-              className="block text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200"
+              className="block text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200"
             >
               من نحن
             </Link>

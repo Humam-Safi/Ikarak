@@ -54,7 +54,7 @@ const FAQ = () => {
           <div key={index} className="mb-4">
             <button
               className={`w-full text-right p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow ${
-                openIndex === index ? "border-l-4 border-blue-600" : ""
+                openIndex === index ? "border-l-4 border-sky-900" : ""
               }`}
               onClick={() => toggleFAQ(index)}
             >
@@ -79,7 +79,7 @@ const FAQ = () => {
         <p className="text-gray-600 mb-4">
           تواصل مع فريقنا للحصول على مساعدة شخصية ونصائح خبراء.
         </p>
-        <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+        <button className="bg-sky-900 text-white px-6 py-2 rounded-lg  transition-colors">
           اتصل بنا
         </button>
       </div>

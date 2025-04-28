@@ -1,11 +1,10 @@
 import React, { useContext, useState } from "react";
-import { Search } from "../Context/searchContext";
+import { Search } from "../../Context/searchContext";
 
 const SearchBar = ({ className = "", onSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const { setSearch } = useContext(Search);
-  setSearch(searchTerm)
-
+  setSearch(searchTerm);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,14 +19,8 @@ const SearchBar = ({ className = "", onSearch }) => {
           placeholder="ابحث عن عقارات..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full pr-20 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+          className="w-full pr-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
         />
-        <button
-          type="submit"
-          className="absolute right-2 top-1/2 -translate-y-1/2 bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700 transition-colors"
-        >
-          بحث
-        </button>
       </div>
     </form>
   );

@@ -28,7 +28,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[600px] bg-gradient-to-r from-blue-900 to-blue-700">
+      <section className="relative h-[600px] bg-gradient-to-r from-sky-600 to-sky-900">
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative max-w-7xl mx-auto px-[30px] h-full flex flex-col justify-center items-center text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -39,7 +39,7 @@ const Home = () => {
           </p>
           <Link
             to="/properties"
-            className="bg-white text-blue-600 px-8 py-3 rounded-md text-lg font-semibold hover:bg-gray-100 transition duration-300 flex items-center gap-2"
+            className="bg-white text-sky-900 px-8 py-3 rounded-md text-lg font-semibold hover:bg-gray-100 transition duration-300 flex items-center gap-2"
           >
             <FaHome className="text-xl" />
             تصفح العقارات
@@ -151,7 +151,8 @@ const Home = () => {
           </p>
           <Link
             to="/contact"
-            className="text-white bg-sky-700 px-8 py-3 rounded-md text-lg font-semibold hover:bg-sky-600 transition duration-300 flex items-center gap-2 justify-center mx-auto w-fit"
+            className="text-white bg-white  px-8 py-3 rounded-md text-lg font-semibold  transition duration-300 flex items-center gap-2 justify-center mx-auto w-fit"
+            style={{color:"#0f2560da"}}
           >
             <FaPhone className="text-xl" />
             اتصل بنا
