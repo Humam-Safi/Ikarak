@@ -2,7 +2,10 @@ const WhatWeDo = () => {
   return (
     <div className="bg-gradient-to-b from-gray-100 to-white py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-16 text-gray-800" style={{ direction: 'rtl' }}>ماذا نفعل</h2>
+      <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-4 font-arabic bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-sky-900 animate-slideIn">
+          ماذا نفعل؟
+        </h1>
+        <div className="w-32 h-0.5 mx-auto mb-8 bg-gradient-to-r from-sky-600 to-sky-900 rounded-full shadow-md"></div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* First row - 2 cards */}

@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import { lazy, Suspense } from 'react';
+import LoadingSpinner from './components/common/LoadingSpinner';
 import Footer from "./components/layout/Footer";
 
 // Lazy load components
@@ -13,7 +14,6 @@ const Contact = lazy(() => import('./pages/Contact'));
 const Services = lazy(() => import('./services/Services'));
 const FAQ = lazy(() => import('./pages/FAQ'));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
-const TermsOfService = lazy(() => import('./services/TermsOfService'));
 const FeaturedProperties = lazy(() => import('./components/properties/featuredProperties'));
 const OfferProperties = lazy(() => import('./components/properties/offerProperties'));
 const NewProperties = lazy(() => import('./components/properties/newProperties'));
@@ -24,7 +24,7 @@ function App() {
       <div className="min-h-screen bg-gray-50">
         <Navbar />
         <main>
-          <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
+          <Suspense fallback={<LoadingSpinner />}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/properties" element={<Properties />} />
@@ -37,7 +37,6 @@ function App() {
               <Route path="/services" element={<Services />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="/terms-of-service" element={<TermsOfService />} />
             </Routes>
           </Suspense>
         </main>

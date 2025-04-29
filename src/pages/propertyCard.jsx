@@ -1,7 +1,10 @@
 import { FaBuilding, FaMapMarkerAlt, FaStar, FaBed, FaBath, FaRulerCombined } from "react-icons/fa";
-import React, { memo } from "react";
+import React, { memo, useMemo } from "react";
 
 const PropertyCard = memo((props) => {
+  const formattedPrice = useMemo(() => 
+    Number(props.price).toLocaleString(), [props.price]
+  );
   return (
     <div style={{
       color: "#0F2460"
@@ -65,7 +68,7 @@ const PropertyCard = memo((props) => {
           </div>
 
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
-            <span className=" font-semibold text-lg md:text-xl">ل.س {Number(props.price).toLocaleString()}</span>
+            <span className=" font-semibold text-lg md:text-xl">ل.س {formattedPrice}</span>
             <a
               href={`/property/${props.id}`}
               className="w-full sm:w-auto bg-sky-900  hover:bg-sky-700 px-4 py-2 rounded-lg text-white transition-colors duration-300 flex items-center justify-center gap-2 text-sm md:text-base"

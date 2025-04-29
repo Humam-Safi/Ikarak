@@ -53,7 +53,7 @@ const Home = () => {
         <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-4 font-arabic bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-sky-900 animate-slideIn">
           عقارات مميزة
         </h1>
-        <div className="w-32 h-0.5 mx-auto mb-8 bg-gradient-to-r from-sky-600  to-sky-900 rounded-full shadow-md"></div>
+        <div className="w-32 h-0.5 mx-auto mb-8 bg-gradient-to-r from-sky-600 to-sky-900 rounded-full shadow-md"></div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProperties.slice(0, 3).map((property) => (
               <PropertyCard
@@ -83,7 +83,7 @@ const Home = () => {
         <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-4 font-arabic bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-sky-900 animate-slideIn">
           عروض حصرية
         </h1>
-        <div className="w-32 h-0.5 mx-auto mb-8 bg-gradient-to-r from-sky-600  to-sky-900 rounded-full shadow-md"></div>
+        <div className="w-32 h-0.5 mx-auto mb-8 bg-gradient-to-r from-sky-600 to-sky-900 rounded-full shadow-md"></div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {offerProperties.slice(0, 3).map((property) => (
               <PropertyCard
@@ -111,9 +111,9 @@ const Home = () => {
 
         <div className="max-w-7xl mx-auto px-[20px] mb-10">
         <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-4 font-arabic bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-sky-900 animate-slideIn">
-          عقارات قيد الانشاء
+          عقارات قيد الإنشاء
         </h1>
-        <div className="w-32 h-0.5 mx-auto mb-8 bg-gradient-to-r from-sky-600  to-sky-900 rounded-full shadow-md"></div>
+        <div className="w-32 h-0.5 mx-auto mb-8 bg-gradient-to-r from-sky-600 to-sky-900 rounded-full shadow-md"></div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {newProperties.slice(0, 3).map((property) => (
               <PropertyCard

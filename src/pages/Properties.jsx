@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext,  useMemo } from "react";
 import SearchBar from "../components/common/SearchBar";
 import FilterSidebar from "../components/properties/FilterSidebar";
 import propertiesData from "../data/properties.json"; // Import the data
@@ -7,35 +7,35 @@ import { Filter } from "../Context/filterContext";
 import { Search } from "../Context/searchContext";
 
 const Properties = () => {
-  const [properties, setProperties] = useState([]);
   const { filter } = useContext(Filter);
   const { search } = useContext(Search);
 
-  useEffect(() => {
-    setProperties(
-      propertiesData.properties.filter(
-        (property) =>
-          (filter.type === "الكل" || property.type === filter.type) &&
-          (filter.bedrooms === "أي" ||
-            Number(property.bedrooms) >=
-              Number(filter.bedrooms.replace("+", ""))) &&
-          (filter.bathrooms === "أي" ||
-            Number(property.bathrooms) >=
-              Number(filter.bathrooms.replace("+", ""))) &&
-          Number(property.area) >= filter.area[0] &&
-          Number(property.area) <= filter.area[1] &&
-          Number(property.price) >= Number(filter.priceRange[0]) &&
-          Number(property.price) <= Number(filter.priceRange[1])
-      )
-    );
-  }, [filter]);
+  const filteredProperties = useMemo(() => 
+    propertiesData.properties.filter(
+      (property) =>
+        (filter.type === "الكل" || property.type === filter.type) &&
+        (filter.bedrooms === "أي" ||
+          Number(property.bedrooms) >=
+            Number(filter.bedrooms.replace("+", ""))) &&
+        (filter.bathrooms === "أي" ||
+          Number(property.bathrooms) >=
+            Number(filter.bathrooms.replace("+", ""))) &&
+        Number(property.area) >= filter.area[0] &&
+        Number(property.area) <= filter.area[1] &&
+        Number(property.price) >= Number(filter.priceRange[0]) &&
+        Number(property.price) <= Number(filter.priceRange[1])
+    ), [filter]
+  );
 
-  const mappedData = properties.filter((property) => {
-    return (
-      property.location.toLowerCase().includes(search.toLowerCase()) ||
-      property.title.toLowerCase().includes(search.toLowerCase())
-    );
-  });
+  const mappedData = useMemo(() => 
+    filteredProperties.filter((property) => {
+      const searchLower = search.toLowerCase();
+      return (
+        property.location.toLowerCase().includes(searchLower) ||
+        property.title.toLowerCase().includes(searchLower)
+      );
+    }), [filteredProperties, search]
+  );
 
   return (
     <div className="container mx-auto px-4 py-12 bg-gray-100 min-h-screen">
@@ -77,4 +77,4 @@ const Properties = () => {
   );
 };
 
-export default Properties;
+export default React.memo(Properties);
