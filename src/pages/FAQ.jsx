@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const faqs = [
   {
@@ -22,11 +23,6 @@ const faqs = [
       "بالإضافة إلى سعر العقار، ستحتاج إلى مراعاة رسوم التسجيل والرسوم القانونية وتكاليف التجديد المحتملة. نقدم تفصيلاً كاملاً خلال العملية.",
   },
   {
-    question: "هل تقدمون خدمات إدارة العقارات؟",
-    answer:
-      "نعم، نقدم خدمات شاملة لإدارة العقارات تشمل الصيانة وفحص المستأجرين وجمع الإيجار.",
-  },
-  {
     question: "كيف تحددون قيم العقارات؟",
     answer:
       "نستخدم مزيجاً من تحليل السوق وتقييم حالة العقار واتجاهات السوق المحلية لتقديم تقييمات دقيقة.",
@@ -41,21 +37,20 @@ const FAQ = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-4">
+    <div className="container mx-auto px-4 py-8 ">
+      <h1 className="text-3xl font-bold text-center mb-4 ">
         الأسئلة الشائعة
       </h1>
       <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
         اعثر على إجابات للأسئلة الشائعة حول شراء وبيع وإدارة العقارات في حمص.
       </p>
 
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-4xl mx-auto transition-all">
         {faqs.map((faq, index) => (
           <div key={index} className="mb-4">
             <button
-              className={`w-full text-right p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow ${
-                openIndex === index ? "border-l-4 border-sky-900" : ""
-              }`}
+              className={`w-full text-right p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow ${openIndex === index ? "border-l-4 border-sky-900" : ""
+                }`}
               onClick={() => toggleFAQ(index)}
             >
               <div className="flex justify-between items-center">
@@ -80,7 +75,7 @@ const FAQ = () => {
           تواصل مع فريقنا للحصول على مساعدة شخصية ونصائح خبراء.
         </p>
         <button className="bg-sky-900 text-white px-6 py-2 rounded-lg  transition-colors">
-          اتصل بنا
+          <Link to="/contact">اتصل بنا  </Link>
         </button>
       </div>
     </div>
