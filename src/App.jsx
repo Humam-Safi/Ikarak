@@ -1,19 +1,22 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Properties from "./pages/Properties";
-import PropertyDetails from "./pages/PropertyDetails";
-import Contact from "./pages/Contact";
-import Services from "./services/Services";
-import FAQ from "./pages/FAQ";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsOfService from "./services/TermsOfService";
+import { lazy, Suspense } from 'react';
 import Footer from "./components/layout/Footer";
-import FeaturedProperties from "./components/properties/featuredProperties";
-import OfferProperties from "./components/properties/offerProperties";
-import NewProperties from "./components/properties/newProperties";
+
+// Lazy load components
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Properties = lazy(() => import('./pages/Properties'));
+const PropertyDetails = lazy(() => import('./pages/PropertyDetails'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Services = lazy(() => import('./services/Services'));
+const FAQ = lazy(() => import('./pages/FAQ'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./services/TermsOfService'));
+const FeaturedProperties = lazy(() => import('./components/properties/featuredProperties'));
+const OfferProperties = lazy(() => import('./components/properties/offerProperties'));
+const NewProperties = lazy(() => import('./components/properties/newProperties'));
 
 function App() {
   return (
@@ -21,20 +24,22 @@ function App() {
       <div className="min-h-screen bg-gray-50">
         <Navbar />
         <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/properties" element={<Properties />} />
-            <Route path="/featured-properties" element={<FeaturedProperties />} />
-            <Route path="/offer-properties" element={<OfferProperties />} />
-            <Route path="/new-properties" element={<NewProperties />} />
-            <Route path="/property/:id" element={<PropertyDetails />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms-of-service" element={<TermsOfService />} />
-          </Routes>
+          <Suspense fallback={<div className="flex items-center justify-center min-h-screen">Loading...</div>}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/properties" element={<Properties />} />
+              <Route path="/featured-properties" element={<FeaturedProperties />} />
+              <Route path="/offer-properties" element={<OfferProperties />} />
+              <Route path="/new-properties" element={<NewProperties />} />
+              <Route path="/property/:id" element={<PropertyDetails />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
+            </Routes>
+          </Suspense>
         </main>
         <Footer />
       </div>

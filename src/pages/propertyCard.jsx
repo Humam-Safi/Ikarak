@@ -1,6 +1,7 @@
 import { FaBuilding, FaMapMarkerAlt, FaStar, FaBed, FaBath, FaRulerCombined } from "react-icons/fa";
+import React, { memo } from "react";
 
-const PropertyCard = (props) => {
+const PropertyCard = memo((props) => {
   return (
     <div style={{
       color: "#0F2460"
@@ -11,6 +12,9 @@ const PropertyCard = (props) => {
             src={props.img}
             alt={props.title}
             className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+            width="400"
+            height="300"
           />
         </div>
         <span style={{
@@ -75,5 +79,6 @@ const PropertyCard = (props) => {
     </div>
   );
 }
+)
 
 export default PropertyCard;

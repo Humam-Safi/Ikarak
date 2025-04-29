@@ -36,7 +36,7 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">تواصل معنا</h3>
             <ul className="space-y-2">
               <li className="flex items-center">
-                <span className="ml-2">البريد الإلكتروني: info@ikarak.com</span>
+                <span className="ml-2">البريد الإلكتروني: aqarathomsia@gmail.com</span>
               </li>
               <li className="flex items-center">
                 <span className="ml-2">الهاتف: +963 933333333</span>
@@ -59,7 +59,7 @@ const Footer = () => {
               <span className="sr-only">واتساب</span>
               <FaWhatsapp fontSize= "30px" className="mr-[30px]"/>
             </a>
-            <a href="#" className="text-gray-300 hover:text-white">
+            <a href="" className="text-gray-300 hover:text-white">
               <span className="sr-only">إنستغرام</span>
               <FaInstagram fontSize= "30px" className="mr-[10px]"/>
             </a>

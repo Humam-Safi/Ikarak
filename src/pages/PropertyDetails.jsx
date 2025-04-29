@@ -35,7 +35,9 @@ const PropertyDetails = () => {
 
   const images = property.image.map(img => ({
     original: img,
-    thumbnail: img
+    thumbnail: img,
+    loading: "lazy", // Add lazy loading
+    sizes: "(max-width: 768px) 100vw, 50vw" // Add responsive sizes
   })) || [];
 
   return (
