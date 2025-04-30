@@ -39,7 +39,7 @@ const Footer = () => {
                 <span className="ml-2">البريد الإلكتروني: aqarathomsia@gmail.com</span>
               </li>
               <li className="flex items-center">
-                <span className="ml-2">الهاتف: +963 933333333</span>
+                <span className="ml-2">الهاتف: 00963967517652</span>
               </li>
               <li className="flex items-center">
                 <span className="ml-2">العنوان: سوريا , حمص</span>
@@ -68,7 +68,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="mt-8 text-center text-gray-400">
-          <p>© {new Date().getFullYear()} عقارات حمصية. جميع الحقوق محفوظة.</p>
+          <p>جميع الحقوق محفوظة , عقارات حمصية © {new Date().getFullYear()} </p>
         </div>
       </div>
     </footer>

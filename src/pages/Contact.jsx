@@ -1,14 +1,24 @@
-import React from 'react';
-import { FaPhone, FaEnvelope, FaWhatsapp, FaInstagram, FaFacebook } from 'react-icons/fa';
-import Map from '../components/common/Map';
-import propertiesData from '../data/properties.json';
+import React from "react";
+import {
+  FaPhone,
+  FaEnvelope,
+  FaWhatsapp,
+  FaInstagram,
+  FaFacebook,
+} from "react-icons/fa";
+import Map from "../components/common/Map";
+import propertiesData from "../data/properties.json";
+import { Link } from "react-router-dom";
 
 const Contact = () => {
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 px-4 sm:px-6 lg:px-8 py-12 overflow-hidden">
+    <div
+      className="relative min-h-screen bg-gradient-to-br from-blue-50                                                    f dcd f فغ^}{ْ
+     via-white to-blue-100 px-4 sm:px-6 lg:px-8 py-12 overflow-hidden"
+    >
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/96897091987"
+        href="https://wa.me/00963967517652"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 animate-bounce"
@@ -37,7 +47,12 @@ const Contact = () => {
               <FaEnvelope className="text-2xl text-sky-900" />
             </div>
             <h3 className="text-xl font-bold mb-2 text-gray-800">إيميل</h3>
-            <p className="text-gray-600">aqarathomsia@gmail.com</p>
+            <a 
+              href="mailto:aqarathomsia@gmail.com"
+              className="text-gray-600 hover:text-sky-900"
+            >
+              aqarathomsia@gmail.com
+            </a>
           </div>
 
           {/* WhatsApp Card */}
@@ -47,8 +62,12 @@ const Contact = () => {
             </div>
             <h3 className="text-xl font-bold mb-2 text-gray-800">واتساب</h3>
             <p className="text-gray-600 hover:text-sky-900">
-              <a href="https://wa.me/96897091987" target="_blank" rel="noopener noreferrer">
-                96897091987
+              <a
+                href="https://wa.me/00963967517652"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                0967517652
               </a>
             </p>
           </div>
@@ -60,7 +79,7 @@ const Contact = () => {
             </div>
             <h3 className="text-xl font-bold mb-2 text-gray-800">هاتف</h3>
             <p className="text-gray-600 hover:text-sky-900">
-              <a href="tel:96897091987">96897091987</a>
+              <a href="tel:00963967517652">0967517652</a>
             </p>
           </div>
         </div>
@@ -68,9 +87,24 @@ const Contact = () => {
         {/* Address Section */}
         <div className="bg-white rounded-2xl shadow-lg p-6 mb-8 text-center transform hover:scale-[1.02] transition-all duration-500 ease-out">
           <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-8 h-8 text-sky-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            <svg
+              className="w-8 h-8 text-sky-900"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+              />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+              />
             </svg>
           </div>
           <h3 className="text-xl font-bold mb-2 text-gray-800">العنوان</h3>
@@ -83,11 +117,11 @@ const Contact = () => {
             موقعنا
           </h2>
           <div className="bg-white rounded-2xl shadow-xl p-4 hover:shadow-2xl transition-all duration-500 ease-out backdrop-blur-sm bg-opacity-90">
-            <Map properties={propertiesData.properties} /> {/* Pass properties data */}
+            <Map properties={propertiesData.properties} />{" "}
+            {/* Pass properties data */}
           </div>
         </div>
       </div>
-
     </div>
   );
 };
