@@ -57,7 +57,7 @@ const PropertyDetails = () => {
         {/* Left Side - Property Details */}
         <div className="order-2 md:order-1 bg-white p-6 rounded-lg shadow-lg">
           <h1 className="text-3xl font-bold mb-4">{property.title}</h1>
-          <p className="text-2xl font-bold text-sky-900 mb-4">{Number(property.price).toLocaleString()}$</p>
+          <p className="text-2xl font-bold text-sky-900 mb-4">{(Number(property.price))>500000 ?Number(property.price).toLocaleString() + "ل.س" : Number(property.price).toLocaleString()+"$"}</p>
           <p className="text-lg text-gray-600 mb-6">{property.location}</p>
 
           <div className="grid grid-cols-2 gap-4 mb-6">

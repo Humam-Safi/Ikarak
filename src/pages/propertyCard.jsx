@@ -1,14 +1,26 @@
-import { FaBuilding, FaMapMarkerAlt, FaStar, FaBed, FaBath, FaRulerCombined } from "react-icons/fa";
-import React, { memo, useMemo } from "react";
+import {
+  FaBuilding,
+  FaMapMarkerAlt,
+  FaStar,
+  FaBed,
+  FaBath,
+  FaRulerCombined,
+} from "react-icons/fa";
+import React, { memo } from "react";
 
 const PropertyCard = memo((props) => {
-  const formattedPrice = useMemo(() => 
-    Number(props.price).toLocaleString(), [props.price]
-  );
+  const priceCurrency =
+    Number(props.price) > 500000
+      ? Number(props.price).toLocaleString() + " ل.س"
+      : Number(props.price).toLocaleString() + "$";
+
   return (
-    <div style={{
-      color: "#0F2460"
-    }} className="w-full bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <div
+      style={{
+        color: "#0F2460",
+      }}
+      className="w-full bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+    >
       <div className="relative">
         <div className="h-48 sm:h-56 md:h-64 bg-gray-200 overflow-hidden">
           <img
@@ -20,17 +32,31 @@ const PropertyCard = memo((props) => {
             height="300"
           />
         </div>
-        <span style={{
-          
-          fontSize: "14px",
-          fontWeight: "500",
-          backgroundColor: "#0f2560da",
-          color: "#fff",
-          padding: "5px 10px",
-
-        }} className="absolute top-2 right-2 bg-yellow-100  px-3 py-1 rounded-full text-sm flex items-center gap-1">
+        <span
+          style={{
+            fontSize: "14px",
+            fontWeight: "500",
+            backgroundColor: "#0f2560da",
+            color: "#fff",
+            padding: "5px 10px",
+          }}
+          className="absolute top-2 right-2 bg-yellow-100  px-3 py-1 rounded-full text-sm flex items-center gap-1"
+        >
           <FaStar className="text-yellow-300" />
           {props.type}
+        </span>
+        <span
+          style={{
+            fontSize: "14px",
+            fontWeight: "500",
+            backgroundColor: "#0f2560da",
+            color: "#fff",
+            padding: "5px 10px",
+          }}
+          className="absolute top-2 left-2 bg-yellow-100  px-3 py-1 rounded-full text-sm flex items-center gap-1"
+        >
+          <FaStar className="text-yellow-300" />
+          {props.kind}
         </span>
       </div>
       <div className="p-4 md:p-6">
@@ -60,7 +86,10 @@ const PropertyCard = memo((props) => {
             <h4 className="font-semibold mb-2">مميزات:</h4>
             <div className="flex flex-wrap gap-2">
               {props.features?.map((feature, index) => (
-                <span key={index} className="bg-gray-100 px-2 py-1 rounded-full text-xs md:text-sm">
+                <span
+                  key={index}
+                  className="bg-gray-100 px-2 py-1 rounded-full text-xs md:text-sm"
+                >
                   {feature}
                 </span>
               ))}
@@ -68,7 +97,9 @@ const PropertyCard = memo((props) => {
           </div>
 
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
-            <span className=" font-semibold text-lg md:text-xl">ل.س {formattedPrice}</span>
+            <span className=" font-semibold text-lg md:text-xl">
+              {priceCurrency}
+            </span>
             <a
               href={`/property/${props.id}`}
               className="w-full sm:w-auto bg-sky-900  hover:bg-sky-700 px-4 py-2 rounded-lg text-white transition-colors duration-300 flex items-center justify-center gap-2 text-sm md:text-base"
@@ -81,7 +112,6 @@ const PropertyCard = memo((props) => {
       </div>
     </div>
   );
-}
-)
+});
 
 export default PropertyCard;

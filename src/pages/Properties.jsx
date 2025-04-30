@@ -1,4 +1,4 @@
-import React, { useContext,  useMemo } from "react";
+import React, { useContext, useMemo } from "react";
 import SearchBar from "../components/common/SearchBar";
 import FilterSidebar from "../components/properties/FilterSidebar";
 import propertiesData from "../data/properties.json"; // Import the data
@@ -9,32 +9,54 @@ import { Search } from "../Context/searchContext";
 const Properties = () => {
   const { filter } = useContext(Filter);
   const { search } = useContext(Search);
+  const dollarToSyp = 11500;
 
-  const filteredProperties = useMemo(() => 
-    propertiesData.properties.filter(
-      (property) =>
-        (filter.type === "الكل" || property.type === filter.type) &&
-        (filter.bedrooms === "أي" ||
-          Number(property.bedrooms) >=
-            Number(filter.bedrooms.replace("+", ""))) &&
-        (filter.bathrooms === "أي" ||
-          Number(property.bathrooms) >=
-            Number(filter.bathrooms.replace("+", ""))) &&
-        Number(property.area) >= filter.area[0] &&
-        Number(property.area) <= filter.area[1] &&
-        Number(property.price) >= Number(filter.priceRange[0]) &&
-        Number(property.price) <= Number(filter.priceRange[1])
-    ), [filter]
+
+  const filteredProperties = useMemo(
+    () =>
+      propertiesData.properties.filter(
+        (property) =>
+          (filter.type === "الكل" || property.type === filter.type) &&
+          (filter.bedrooms === "أي" ||
+            Number(property.bedrooms) >=
+              Number(filter.bedrooms.replace("+", ""))) &&
+          (filter.bathrooms === "أي" ||
+            Number(property.bathrooms) >=
+              Number(filter.bathrooms.replace("+", ""))) &&
+          Number(property.area) >= filter.area[0] &&
+          Number(property.area) <= filter.area[1] &&
+          (filter.currency === "syp"
+            ? Number(property.price) > 500000
+              ? Number(property.price) >= Number(filter.priceRange[0])
+              : Number(property.price) * dollarToSyp >=
+                Number(filter.priceRange[0])
+            : Number(property.price) > 500000
+            ? Number(property.price) / dollarToSyp >=
+              Number(filter.priceRange[0])
+            : Number(property.price) >= Number(filter.priceRange[0])) &&
+          (filter.currency === "syp"
+            ? Number(property.price) > 500000
+              ? Number(property.price) <= Number(filter.priceRange[1])
+              : Number(property.price) * dollarToSyp <=
+                Number(filter.priceRange[1])
+            : Number(property.price) > 500000
+            ? Number(property.price) / dollarToSyp <=
+              Number(filter.priceRange[1])
+            : Number(property.price) <= Number(filter.priceRange[1]))
+      ),
+    [filter]
   );
 
-  const mappedData = useMemo(() => 
-    filteredProperties.filter((property) => {
-      const searchLower = search.toLowerCase();
-      return (
-        property.location.toLowerCase().includes(searchLower) ||
-        property.title.toLowerCase().includes(searchLower)
-      );
-    }), [filteredProperties, search]
+  const mappedData = useMemo(
+    () =>
+      filteredProperties.filter((property) => {
+        const searchLower = search.toLowerCase();
+        return (
+          property.location.toLowerCase().includes(searchLower) ||
+          property.title.toLowerCase().includes(searchLower)
+        );
+      }),
+    [filteredProperties, search]
   );
 
   return (
@@ -60,6 +82,7 @@ const Properties = () => {
                 img={property.image[0]}
                 key={property.id}
                 type={property.type}
+                kind={property.kind}
                 location={property.location}
                 title={property.title}
                 price={property.price}

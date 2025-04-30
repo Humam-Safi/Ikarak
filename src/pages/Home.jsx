@@ -68,6 +68,7 @@ const Home = () => {
                 img={property.image[0]}
                 key={property.id}
                 type={property.type}
+                kind={property.kind}
                 location={property.location}
                 title={property.title}
                 price={property.price}
@@ -98,6 +99,7 @@ const Home = () => {
                 img={property.image[0]}
                 key={property.id}
                 type={property.type}
+                kind={property.kind}
                 location={property.location}
                 title={property.title}
                 price={property.price}
@@ -128,6 +130,7 @@ const Home = () => {
                 img={property.image[0]}
                 key={property.id}
                 type={property.type}
+                kind={property.kind}
                 location={property.location}
                 title={property.title}
                 price={property.price}

@@ -51,11 +51,11 @@ const Footer = () => {
         {/* Social Media Links */}
         <div className="mt-8 pt-8 border-t border-gray-800">
           <div className="flex justify-center space-x-6">
-            <a href="#" className="text-gray-300 hover:text-white">
+            <a href="https://www.facebook.com/share/18tKpfRYM2/" className="text-gray-300 hover:text-white">
               <span className="sr-only">فيسبوك</span>
               <FaFacebook fontSize= "30px" className="mr-[10px]" />
             </a>
-            <a href="#" className="text-gray-300 hover:text-white">
+            <a href="https://wa.me/00963967517652" className="text-gray-300 hover:text-white">
               <span className="sr-only">واتساب</span>
               <FaWhatsapp fontSize= "30px" className="mr-[30px]"/>
             </a>
