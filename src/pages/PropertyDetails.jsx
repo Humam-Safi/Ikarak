@@ -119,6 +119,7 @@ const PropertyDetails = () => {
               key={relatedProperty.id}
               img={relatedProperty.image[0]}
               type={relatedProperty.type}
+              kind={relatedProperty.kind}
               location={relatedProperty.location}
               title={relatedProperty.title}
               price={relatedProperty.price}
