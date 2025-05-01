@@ -3,7 +3,10 @@ import React from 'react';
 const PrivacyPolicy = () => {
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-8">سياسة الخصوصية</h1>
+      <h1 className="text-4xl md:text-5xl font-extrabold from-sky-300 to-sky-900 text-center mb-4 font-arabic bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-sky-900 animate-slideIn">
+            سياسة الخصوصية
+          </h1>
+          <div className="w-32 h-1 mx-auto mb-8 bg-gradient-to-r from-sky-300 to-sky-600 rounded-full shadow-md"></div>
       
       <div className="max-w-3xl mx-auto space-y-6">
         <section>

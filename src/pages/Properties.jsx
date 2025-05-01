@@ -61,10 +61,11 @@ const Properties = () => {
 
   return (
     <div className="container mx-auto px-4 py-12 bg-gray-100 min-h-screen">
-      <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-4 font-arabic bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-sky-900 animate-slideIn">
-        العقارات المتاحة
-      </h1>
-      <div className="w-32 h-0.5 mx-auto mb-8 bg-gradient-to-r from-sky-600  to-sky-900 rounded-full shadow-md"></div>
+      <h1 className="text-4xl md:text-5xl font-extrabold from-sky-300 to-sky-900 text-center mb-4 font-arabic bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-sky-900 animate-slideIn">
+            العقارات المتاحة
+          </h1>
+          <div className="w-32 h-1 mx-auto mb-8 bg-gradient-to-r from-sky-300 to-sky-600 rounded-full shadow-md"></div>
+    
 
       <div className="flex flex-col lg:flex-row gap-10">
         {/* Filter Sidebar */}

@@ -38,9 +38,10 @@ const FAQ = () => {
 
   return (
     <div className="container mx-auto px-4 py-8 ">
-      <h1 className="text-3xl font-bold text-center mb-4 ">
-        الأسئلة الشائعة
-      </h1>
+          <h1 className="text-4xl md:text-5xl font-extrabold from-sky-300 to-sky-900 text-center mb-4 font-arabic bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-sky-900 animate-slideIn">
+            الأسلئة الشائعة
+          </h1>
+          <div className="w-32 h-1 mx-auto mb-8 bg-gradient-to-r from-sky-300 to-sky-600 rounded-full shadow-md"></div>
       <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
         اعثر على إجابات للأسئلة الشائعة حول شراء وبيع وإدارة العقارات في حمص.
       </p>

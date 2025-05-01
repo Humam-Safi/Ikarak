@@ -108,7 +108,10 @@ const PropertyDetails = () => {
 
       {/* Related Properties */}
       <div className="mt-12">
-        <h2 className="text-2xl font-bold mb-6">عقارات مشابهة</h2>
+      <h1 className="text-4xl md:text-5xl font-extrabold from-sky-300 to-sky-900 text-center mb-4 font-arabic bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-sky-900 animate-slideIn">
+            عقارات مشابهة
+          </h1>
+          <div className="w-32 h-1 mx-auto mb-8 bg-gradient-to-r from-sky-300 to-sky-600 rounded-full shadow-md"></div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {relatedProperties.map((relatedProperty) => (
             <PropertyCard

@@ -3,8 +3,6 @@ import {
   FaPhone,
   FaEnvelope,
   FaWhatsapp,
-  FaInstagram,
-  FaFacebook,
 } from "react-icons/fa";
 import Map from "../components/common/Map";
 import propertiesData from "../data/properties.json";
@@ -18,7 +16,7 @@ const Contact = () => {
     >
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/00963967517652"
+        href="https://wa.me/963967517652"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 animate-bounce"
@@ -35,10 +33,10 @@ const Contact = () => {
 
       <div className="relative z-10 container mx-auto">
         {/* Header */}
-        <h1 className="text-4xl md:text-5xl font-extrabold text-center mb-4 font-arabic bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-sky-900 animate-slideIn">
-          تواصل معنا
-        </h1>
-        <div className="w-32 h-0.5 mx-auto mb-8 bg-gradient-to-r from-sky-600 to-sky-900 rounded-full shadow-md"></div>
+        <h1 className="text-4xl md:text-5xl font-extrabold from-sky-300 to-sky-900 text-center mb-4 font-arabic bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-sky-900 animate-slideIn">
+            تواصل معنا
+          </h1>
+          <div className="w-32 h-1 mx-auto mb-8 bg-gradient-to-r from-sky-300 to-sky-600 rounded-full shadow-md"></div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           {/* Email Card */}
@@ -63,7 +61,7 @@ const Contact = () => {
             <h3 className="text-xl font-bold mb-2 text-gray-800">واتساب</h3>
             <p className="text-gray-600 hover:text-sky-900">
               <a
-                href="https://wa.me/00963967517652"
+                href="https://wa.me/963967517652"
                 target="_blank"
                 rel="noopener noreferrer"
               >

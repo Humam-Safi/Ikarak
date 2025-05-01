@@ -41,9 +41,10 @@ const About = () => {
       {/* Mission and Values Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-[30px]">
-          <h2 className="text-3xl font-bold text-sky-900 mb-12 text-center">
-            مهمتنا وقيمنا
-          </h2>
+        <h1 className="text-4xl md:text-5xl font-extrabold from-sky-300 to-sky-900 text-center mb-4 font-arabic bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-sky-900 animate-slideIn">
+            مهمتنا و قيمنا
+          </h1>
+          <div className="w-32 h-1 mx-auto mb-8 bg-gradient-to-r from-sky-300 to-sky-600 rounded-full shadow-md"></div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md">
               <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
@@ -89,7 +90,7 @@ const About = () => {
           </p>
           <div className=" flex items-center w-[fit-content] mx-auto gap-2 bg-white text-blue-600 px-8 py-3 rounded-md text-lg font-semibold hover:bg-gray-100 transition duration-300 cursor-pointer">
             
-            <a href="https://wa.me/963933333333" style={{color:"#0f2560da"}} className="flex items-center gap-2"> <FaPhone color="#0f2560da"/>اتصل بنا</a>
+            <a href="/contact" style={{color:"#0f2560da"}} className="flex items-center gap-2"> <FaPhone color="#0f2560da"/>اتصل بنا</a>
           </div>
         </div>
       </section>
