@@ -55,7 +55,7 @@ const Footer = () => {
               <span className="sr-only">فيسبوك</span>
               <FaFacebook fontSize= "30px" className="mr-[10px]" />
             </a>
-            <a href="https://wa.me/00963967517652" className="text-gray-300 hover:text-white">
+            <a href="https://wa.me/963967517652" className="text-gray-300 hover:text-white">
               <span className="sr-only">واتساب</span>
               <FaWhatsapp fontSize= "30px" className="mr-[30px]"/>
             </a>
