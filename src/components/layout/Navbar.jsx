@@ -30,11 +30,18 @@ const Navbar = () => {
               الرئيسية
             </Link>
             <Link
-              to="/properties"
+              to="/sale-properties"
               className="text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
             >
-              العقارات
+              عروض البيع
             </Link>
+            <Link
+              to="/rent-properties"
+              className="text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
+            >
+              عروض الأجار
+            </Link>
+            
 
             <Link
               to="/contact"

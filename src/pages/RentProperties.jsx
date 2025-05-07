@@ -6,15 +6,15 @@ import PropertyCard from "./propertyCard";
 import { Filter } from "../Context/filterContext";
 import { Search } from "../Context/searchContext";
 
-const Properties = () => {
+const RentProperties = () => {
   const { filter } = useContext(Filter);
   const { search } = useContext(Search);
   const dollarToSyp = 11500;
-
+  const data  = propertiesData.properties.filter((property)=>(property.kind === "أجار"))
 
   const filteredProperties = useMemo(
     () =>
-      propertiesData.properties.filter(
+      data.filter(
         (property) =>
           (filter.type === "الكل" || property.type === filter.type) &&
           (filter.bedrooms === "أي" ||
@@ -101,4 +101,4 @@ const Properties = () => {
   );
 };
 
-export default React.memo(Properties);
+export default React.memo(RentProperties);

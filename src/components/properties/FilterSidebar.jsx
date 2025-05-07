@@ -16,7 +16,7 @@ const FilterSidebar = () => {
     syp: {
       min: 0,
       max: 5000000000,
-      step: 10000,
+      step: 1000000,
     },
     usd: {
       min: 0,
