@@ -8,6 +8,7 @@ import Footer from "./components/layout/Footer";
 // Lazy load components
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
+const Properties = lazy(() => import('./pages/Properties'));
 const SaleProperties = lazy(() => import('./pages/SaleProperties'));
 const RentProperties = lazy(() => import('./pages/RentProperties'));
 const PropertyDetails = lazy(() => import('./pages/PropertyDetails'));
@@ -28,6 +29,7 @@ function App() {
           <Suspense fallback={<LoadingSpinner />}>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/properties" element={<Properties />} />
               <Route path="/sale-properties" element={<SaleProperties />} />
               <Route path="/rent-properties" element={<RentProperties />} />
               <Route path="/featured-properties" element={<FeaturedProperties />} />
