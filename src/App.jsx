@@ -19,6 +19,7 @@ const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const FeaturedProperties = lazy(() => import('./components/properties/featuredProperties'));
 const OfferProperties = lazy(() => import('./components/properties/offerProperties'));
 const NewProperties = lazy(() => import('./components/properties/newProperties'));
+const UserGuide = lazy(() => import('./pages/UserGuide'));
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
               <Route path="/services" element={<Services />} />
               <Route path="/faq" element={<FAQ />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/user-guide" element={<UserGuide />} />
             </Routes>
           </Suspense>
         </main>

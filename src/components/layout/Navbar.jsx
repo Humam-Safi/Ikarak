@@ -41,8 +41,6 @@ const Navbar = () => {
             >
               عروض الأجار
             </Link>
-            
-
             <Link
               to="/contact"
               className="text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
@@ -54,6 +52,12 @@ const Navbar = () => {
               className="text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
             >
               من نحن
+            </Link>
+            <Link
+              to="/user-guide"
+              className="text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
+            >
+              دليل المستخدم
             </Link>
           </div>
 
@@ -86,18 +90,16 @@ const Navbar = () => {
             </Link>
             <Link
               to="/sale-properties"
-              className="block text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
+              className="block text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200"
             >
               عروض البيع
             </Link>
-
             <Link
               to="/rent-properties"
-              className="block text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
+              className="block text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200"
             >
               عروض الأجار
             </Link>
-
             <Link
               to="/contact"
               className="block text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200"
@@ -109,6 +111,12 @@ const Navbar = () => {
               className="block text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200"
             >
               من نحن
+            </Link>
+            <Link
+              to="/user-guide"
+              className="block text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200"
+            >
+              دليل المستخدم
             </Link>
           </div>
         </div>
