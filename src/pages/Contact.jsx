@@ -1,123 +1,99 @@
-import React from "react";
-import {
-  FaPhone,
-  FaEnvelope,
-  FaWhatsapp,
-} from "react-icons/fa";
+import React, { useState } from "react";
+import { FaEnvelope, FaPhone, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
+import Toast from "../components/common/Toast";
+import AnimatedTitle from "../components/common/AnimatedTitle";
 import Map from "../components/common/Map";
-import propertiesData from "../data/properties.json";
 import { Link } from "react-router-dom";
 
 const Contact = () => {
+
+  const [toast, setToast] = useState(null);
+
+
+
   return (
     <div
-      className="relative min-h-screen bg-gradient-to-br from-blue-50                                                    f dcd f فغ^}{ْ
-     via-white to-blue-100 px-4 sm:px-6 lg:px-8 py-12 overflow-hidden"
+      className="relative min-h-screen bg-gradient-to-br from-primary-50
+      via-white to-primary-100 px-4 sm:px-6 lg:px-8 py-12 overflow-hidden"
     >
-      {/* Floating WhatsApp Button */}
-      <a
-        href="https://wa.me/963967517652"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 animate-bounce"
-        aria-label="Chat on WhatsApp"
-      >
-        <FaWhatsapp className="text-2xl" />
-      </a>
+      {/* Show toast notification if exists */}
+      {toast && (
+        <Toast
+          type={toast.type}
+          message={toast.message}
+          onClose={() => setToast(null)}
+        />
+      )}
 
-      {/* Decorative Background Elements */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 left-0 w-48 h-48 bg-sky-200 rounded-full opacity-10 blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-72 h-72 bg-sky-300 rounded-full opacity-10 blur-3xl"></div>
-      </div>
+      {/* Decorative elements */}
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-200 rounded-full opacity-30 blur-3xl"></div>
+      <div className="absolute top-0 left-0 w-48 h-48 bg-primary-200 rounded-full opacity-10 blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-primary-300 rounded-full opacity-10 blur-3xl"></div>
 
-      <div className="relative z-10 container mx-auto">
-        {/* Header */}
-        <h1 className="text-4xl md:text-5xl font-extrabold from-sky-300 to-sky-900 text-center mb-4 font-arabic bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-sky-900 animate-slideIn">
-            تواصل معنا
-          </h1>
-          <div className="w-32 h-1 mx-auto mb-8 bg-gradient-to-r from-sky-300 to-sky-600 rounded-full shadow-md"></div>
+      <div className="relative max-w-7xl mx-auto z-10">
+        {/* Page title */}
+        <div style={{
+          width:"100%",
+          textAlign:"center"
+        }}>
+          <AnimatedTitle
+            text="اتصل بنا"
+            tag="h1"
+            animation="shimmer"
+            className="text-4xl md:text-5xl font-extrabold text-center mb-4 font-arabic"
+          />
+        </div>
+        <div className="w-32 h-1 mx-auto mb-8 bg-gradient-to-r from-primary-300 to-primary-600 rounded-full shadow-md"></div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          {/* Email Card */}
-          <div className="bg-white rounded-2xl shadow-lg p-6 text-center transform hover:scale-[1.02] transition-all duration-500 ease-out">
-            <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <FaEnvelope className="text-2xl text-sky-900" />
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-12">
+          {/* Contact Information Cards */}
+          <div className="bg-white rounded-xl shadow-md p-6 text-center transform hover:scale-105 transition-transform duration-300">
+            <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <FaEnvelope className="text-2xl text-primary-900" />
             </div>
-            <h3 className="text-xl font-bold mb-2 text-gray-800">إيميل</h3>
-            <a 
+            <h3 className="text-xl font-bold mb-2 text-grey-800">إيميل</h3>
+            <a
               href="mailto:aqarathomsia@gmail.com"
-              className="text-gray-600 hover:text-sky-900"
+              className="text-grey-600 hover:text-primary-900"
             >
               aqarathomsia@gmail.com
             </a>
           </div>
 
-          {/* WhatsApp Card */}
-          <div className="bg-white rounded-2xl shadow-lg p-6 text-center transform hover:scale-[1.02] transition-all duration-500 ease-out">
-            <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <FaWhatsapp className="text-2xl text-sky-900" />
+          <div className="bg-white rounded-xl shadow-md p-6 text-center transform hover:scale-105 transition-transform duration-300">
+            <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <FaWhatsapp className="text-2xl text-primary-900" />
             </div>
-            <h3 className="text-xl font-bold mb-2 text-gray-800">واتساب</h3>
-            <p className="text-gray-600 hover:text-sky-900">
-              <a
-                href="https://wa.me/963967517652"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                0967517652
+            <h3 className="text-xl font-bold mb-2 text-grey-800">واتساب</h3>
+            <p className="text-grey-600 hover:text-primary-900">
+              <a href="https://wa.me/963967517652" target="_blank" rel="noopener noreferrer">
+                +963 967517652
               </a>
             </p>
           </div>
 
-          {/* Phone Card */}
-          <div className="bg-white rounded-2xl shadow-lg p-6 text-center transform hover:scale-[1.02] transition-all duration-500 ease-out">
-            <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <FaPhone className="text-2xl text-sky-900" />
+          <div className="bg-white rounded-xl shadow-md p-6 text-center transform hover:scale-105 transition-transform duration-300">
+            <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <FaPhone className="text-2xl text-primary-900" />
             </div>
-            <h3 className="text-xl font-bold mb-2 text-gray-800">هاتف</h3>
-            <p className="text-gray-600 hover:text-sky-900">
-              <a href="tel:00963967517652">0967517652</a>
+            <h3 className="text-xl font-bold mb-2 text-grey-800">هاتف</h3>
+            <p className="text-grey-600 hover:text-primary-900">
+              <a href="tel:+963967517652">+963 967517652</a>
             </p>
           </div>
-        </div>
 
-        {/* Address Section */}
-        <div className="bg-white rounded-2xl shadow-lg p-6 mb-8 text-center transform hover:scale-[1.02] transition-all duration-500 ease-out">
-          <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg
-              className="w-8 h-8 text-sky-900"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+          {/* Map and Address */}
+          <div className="bg-white rounded-xl shadow-md p-6 text-center lg:col-span-3">
+            <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <FaMapMarkerAlt
+                className="w-8 h-8 text-primary-900"
               />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
+            </div>
+            <h3 className="text-xl font-bold mb-2 text-grey-800">العنوان</h3>
+            <p className="text-grey-600">سوريا - حمص</p>
           </div>
-          <h3 className="text-xl font-bold mb-2 text-gray-800">العنوان</h3>
-          <p className="text-gray-600">سوريا - حمص</p>
-        </div>
 
-        {/* Map Section */}
-        <div className="mt-8">
-          <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center bg-gradient-to-r from-sky-600 to-sky-900 bg-clip-text text-transparent">
-            موقعنا
-          </h2>
-          <div className="bg-white rounded-2xl shadow-xl p-4 hover:shadow-2xl transition-all duration-500 ease-out backdrop-blur-sm bg-opacity-90">
-            <Map properties={propertiesData.properties} />{" "}
-            {/* Pass properties data */}
-          </div>
+
         </div>
       </div>
     </div>

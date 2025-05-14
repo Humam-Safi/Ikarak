@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import AnimatedTitle from "../components/common/AnimatedTitle";
 
 const faqs = [
   {
@@ -37,12 +38,20 @@ const FAQ = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 ">
-          <h1 className="text-4xl md:text-5xl font-extrabold from-sky-300 to-sky-900 text-center mb-4 font-arabic bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-sky-900 animate-slideIn">
-            الأسلئة الشائعة
-          </h1>
-          <div className="w-32 h-1 mx-auto mb-8 bg-gradient-to-r from-sky-300 to-sky-600 rounded-full shadow-md"></div>
-      <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+    <div className="container mx-auto px-4 py-8">
+      <div style={{
+        width:'100%',
+        textAlign:"center"
+      }}>
+        <AnimatedTitle
+          text="الأسلئة الشائعة"
+          tag="h1"
+          animation="shimmer"
+          className="text-4xl md:text-5xl font-extrabold text-center mb-4 font-arabic"
+        />
+      </div>
+      <div className="w-32 h-1 mx-auto mb-8 bg-gradient-to-r from-primary-300 to-primary-600 rounded-full shadow-md"></div>
+      <p className="text-center text-grey-700 mb-12 max-w-2xl mx-auto">
         اعثر على إجابات للأسئلة الشائعة حول شراء وبيع وإدارة العقارات في حمص.
       </p>
 
@@ -50,20 +59,20 @@ const FAQ = () => {
         {faqs.map((faq, index) => (
           <div key={index} className="mb-4">
             <button
-              className={`w-full text-right p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow ${openIndex === index ? "border-l-4 border-sky-900" : ""
+              className={`w-full text-right p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow ${openIndex === index ? "border-l-4 border-primary-600" : ""
                 }`}
               onClick={() => toggleFAQ(index)}
             >
               <div className="flex justify-between items-center">
                 <h3 className="font-bold">{faq.question}</h3>
-                <span className="text-xl">
+                <span className={`text-xl transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""}`}>
                   {openIndex === index ? "−" : "+"}
                 </span>
               </div>
             </button>
             {openIndex === index && (
-              <div className="p-4 bg-gray-50 rounded-b-lg">
-                <p className="text-gray-600">{faq.answer}</p>
+              <div className="p-4 bg-grey-50 rounded-b-lg border-b border-l border-r border-grey-200">
+                <p className="text-grey-700">{faq.answer}</p>
               </div>
             )}
           </div>
@@ -71,13 +80,18 @@ const FAQ = () => {
       </div>
 
       <div className="mt-12 text-center">
-        <h2 className="text-2xl font-bold mb-4">هل لا تزال لديك أسئلة؟</h2>
-        <p className="text-gray-600 mb-4">
+        <AnimatedTitle
+          text="هل لا تزال لديك أسئلة؟"
+          tag="h2"
+          animation="glow"
+          className="text-2xl font-bold mb-4"
+        />
+        <p className="text-grey-700 mb-4">
           تواصل مع فريقنا للحصول على مساعدة شخصية ونصائح خبراء.
         </p>
-        <button className="bg-sky-900 text-white px-6 py-2 rounded-lg  transition-colors">
-          <Link to="/contact">اتصل بنا  </Link>
-        </button>
+        <Link to="/contact" className="bg-gradient-primary text-white px-6 py-2 rounded-lg transition-all duration-300 hover:shadow-md inline-block hover:-translate-y-1">
+          اتصل بنا
+        </Link>
       </div>
     </div>
   );

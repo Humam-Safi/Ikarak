@@ -5,6 +5,7 @@ import propertiesData from "../data/properties.json"; // Import the data
 import PropertyCard from "./propertyCard";
 import { Filter } from "../Context/filterContext";
 import { Search } from "../Context/searchContext";
+import AnimatedTitle from "../components/common/AnimatedTitle";
 
 const Properties = () => {
   const { filter } = useContext(Filter);
@@ -59,16 +60,20 @@ const Properties = () => {
   );
 
   return (
-    <div className="container mx-auto px-4 py-12 bg-gray-100 min-h-screen">
-      <h1 className="text-4xl md:text-5xl font-extrabold from-sky-300 to-sky-900 text-center mb-4 font-arabic bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-sky-900 animate-slideIn">
-            العقارات المتاحة
-          </h1>
-          <div className="w-32 h-1 mx-auto mb-8 bg-gradient-to-r from-sky-300 to-sky-600 rounded-full shadow-md"></div>
+    <div className="container mx-auto px-4 py-12 bg-grey-50 min-h-screen">
+      <div className="section-title mb-8">
+        <AnimatedTitle
+          text="العقارات المتاحة"
+          tag="h1"
+          animation="shimmer"
+          className="font-extrabold text-4xl md:text-5xl text-center"
+        />
+        <div className="w-32 h-1 mx-auto mt-4 bg-gradient-to-r from-primary-300 to-primary-600 rounded-full shadow-md"></div>
+      </div>
     
-
       <div className="flex flex-col lg:flex-row gap-10">
         {/* Filter Sidebar */}
-        <div className="w-full h-full lg:w-1/4 bg-white p-6 rounded-lg shadow-md border border-gray-200">
+        <div className="w-full lg:w-1/4 bg-white p-6 rounded-lg shadow-md border border-grey-200 h-max sticky top-20">
           <FilterSidebar />
         </div>
 
@@ -76,24 +81,32 @@ const Properties = () => {
         <div className="w-full lg:w-3/4">
           <SearchBar className="mb-8" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-8">
-            {mappedData.map((property) => (
-              <PropertyCard
-                img={property.image[0]}
-                key={property.id}
-                type={property.type}
-                kind={property.kind}
-                location={property.location}
-                title={property.title}
-                price={property.price}
-                bedrooms={property.bedrooms}
-                bathrooms={property.bathrooms}
-                area={property.area}
-                features={property.features}
-                id={property.id}
-              />
-            ))}
-          </div>
+          {mappedData.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {mappedData.map((property) => (
+                <PropertyCard
+                  img={property.image[0]}
+                  key={property.id}
+                  type={property.type}
+                  kind={property.kind}
+                  location={property.location}
+                  title={property.title}
+                  price={property.price}
+                  bedrooms={property.bedrooms}
+                  bathrooms={property.bathrooms}
+                  area={property.area}
+                  features={property.features}
+                  id={property.id}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="text-center p-12 bg-white rounded-lg shadow-md">
+              <p className="text-grey-700 text-xl">
+                لا توجد عقارات مطابقة للمعايير المحددة
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </div>

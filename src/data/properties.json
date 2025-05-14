@@ -7,13 +7,13 @@
       "kind": "أجار",
       "state": "new",
       "location": "سوريا ,حمص , الغوطة",
-      "latitude": 3.73275,
+      "latitude": 34.73275,
       "longitude": 36.699971,
       "price": 40000,
       "image": [
         "/images/estate.jpg",
-        "/images/estate.jpg",
-        "/images/estate.jpg"
+        "/images/image.jpg",
+        "/images/The-Importance-of-High-Quality-Real-Estate-Photos-v3.webp"
       ],
       "bedrooms": 5,
       "bathrooms": 2,
@@ -31,9 +31,9 @@
       "longitude": 36.699971,
       "price": 35000,
       "image": [
+        "/images/image.jpg",
         "/images/estate.jpg",
-        "/images/estate.jpg",
-        "/images/estate.jpg"
+        "/images/The-Importance-of-High-Quality-Real-Estate-Photos-v3.webp"
       ],
       "bedrooms": 5,
       "bathrooms": 2,
@@ -51,9 +51,9 @@
       "longitude": 36.699971,
       "price": 55000,
       "image": [
+        "/images/The-Importance-of-High-Quality-Real-Estate-Photos-v3.webp",
         "/images/estate.jpg",
-        "/images/estate.jpg",
-        "/images/estate.jpg"
+        "/images/image.jpg"
       ],
       "bedrooms": 5,
       "bathrooms": 2,
@@ -71,8 +71,8 @@
       "longitude": 36.699971,
       "price": 5000000,
       "image": [
-        "/images/estate.jpg",
-        "/images/estate.jpg",
+        "/images/OIP.jpeg",
+        "/images/image.jpg",
         "/images/estate.jpg"
       ],
       "bedrooms": 5,
@@ -91,9 +91,9 @@
       "longitude": 35.9095,
       "price": 1200000,
       "image": [
+        "/images/OIP (1).jpeg",
         "/images/estate.jpg",
-        "/images/estate.jpg",
-        "/images/estate.jpg"
+        "/images/The-Importance-of-High-Quality-Real-Estate-Photos-v3.webp"
       ],
       "bedrooms": 3,
       "bathrooms": 1,
@@ -111,8 +111,8 @@
       "longitude": 35.9095,
       "price": 1200000,
       "image": [
-        "/images/estate.jpg",
-        "/images/estate.jpg",
+        "/images/OIP (2).jpeg",
+        "/images/image.jpg",
         "/images/estate.jpg"
       ],
       "bedrooms": 3,
@@ -131,8 +131,8 @@
       "longitude": 35.9095,
       "price": 1200000,
       "image": [
-        "/images/estate.jpg",
-        "/images/estate.jpg",
+        "/images/8a58f04b-80c2-4a84-a838-98f456a64eb8_removalai_preview.png",
+        "/images/OIP.jpeg",
         "/images/estate.jpg"
       ],
       "bedrooms": 3,
@@ -151,9 +151,9 @@
       "longitude": 35.9095,
       "price": 1200000,
       "image": [
-        "/images/estate.jpg",
-        "/images/estate.jpg",
-        "/images/estate.jpg"
+        "/images/image.jpg",
+        "/images/OIP (1).jpeg",
+        "/images/The-Importance-of-High-Quality-Real-Estate-Photos-v3.webp"
       ],
       "bedrooms": 3,
       "bathrooms": 1,
@@ -171,8 +171,8 @@
       "longitude": 35.9095,
       "price": 800000,
       "image": [
-        "/images/estate.jpg",
-        "/images/estate.jpg",
+        "/images/OIP (2).jpeg",
+        "/images/8a58f04b-80c2-4a84-a838-98f456a64eb8_removalai_preview.png",
         "/images/estate.jpg"
       ],
       "bedrooms": 4,
@@ -191,9 +191,9 @@
       "longitude": 35.9095,
       "price": 800000,
       "image": [
-        "/images/estate.jpg",
-        "/images/estate.jpg",
-        "/images/estate.jpg"
+        "/images/The-Importance-of-High-Quality-Real-Estate-Photos-v3.webp",
+        "/images/OIP.jpeg",
+        "/images/image.jpg"
       ],
       "bedrooms": 4,
       "bathrooms": 1,
@@ -211,9 +211,9 @@
       "longitude": 35.9095,
       "price": 800000,
       "image": [
+        "/images/OIP (1).jpeg",
         "/images/estate.jpg",
-        "/images/estate.jpg",
-        "/images/estate.jpg"
+        "/images/8a58f04b-80c2-4a84-a838-98f456a64eb8_removalai_preview.png"
       ],
       "bedrooms": 4,
       "bathrooms": 1,
@@ -231,9 +231,9 @@
       "longitude": 35.9095,
       "price": 800000,
       "image": [
-        "/images/estate.jpg",
-        "/images/estate.jpg",
-        "/images/estate.jpg"
+        "/images/image.jpg",
+        "/images/OIP (2).jpeg",
+        "/images/The-Importance-of-High-Quality-Real-Estate-Photos-v3.webp"
       ],
       "bedrooms": 4,
       "bathrooms": 1,

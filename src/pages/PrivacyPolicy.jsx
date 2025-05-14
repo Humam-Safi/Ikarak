@@ -1,96 +1,96 @@
-import React from 'react';
+import React from "react";
+import AnimatedTitle from "../components/common/AnimatedTitle";
 
 const PrivacyPolicy = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl md:text-5xl font-extrabold from-sky-300 to-sky-900 text-center mb-4 font-arabic bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-sky-900 animate-slideIn">
-            سياسة الخصوصية
-          </h1>
-          <div className="w-32 h-1 mx-auto mb-8 bg-gradient-to-r from-sky-300 to-sky-600 rounded-full shadow-md"></div>
-      
-      <div className="max-w-3xl mx-auto space-y-6">
-        <section>
-          <h2 className="text-2xl font-bold mb-4">1. المقدمة</h2>
-          <p className="text-gray-600">
-            في شركة عقارات حمصية، نحن ملتزمون بحماية خصوصيتك. توضح سياسة الخصوصية هذه كيفية جمع واستخدام وحماية معلوماتك الشخصية عند استخدام خدماتنا.
+    <div className="container mx-auto px-4 py-12 bg-grey-50">
+      <AnimatedTitle
+        text="سياسة الخصوصية"
+        tag="h1"
+        animation="shimmer"
+        className="text-4xl md:text-5xl font-extrabold text-center mb-4 font-arabic"
+      />
+      <div className="w-32 h-1 mx-auto mb-8 bg-gradient-to-r from-primary-300 to-primary-600 rounded-full shadow-md"></div>
+      <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md p-8">
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold mb-4 text-primary-600">مقدمة</h2>
+          <p className="text-grey-600">
+            نحن في عقارات حمصية نقدر خصوصيتك ونلتزم بحماية بياناتك الشخصية. تُوضح سياسة الخصوصية هذه كيفية جمعنا واستخدامنا وحمايتنا للمعلومات التي تقدمها لنا عند استخدام موقعنا.
           </p>
         </section>
 
-        <section>
-          <h2 className="text-2xl font-bold mb-4">2. المعلومات التي نجمعها</h2>
-          <p className="text-gray-600">
-            قد نجمع الأنواع التالية من المعلومات:
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold mb-4 text-primary-600">المعلومات التي نجمعها</h2>
+          <p className="text-grey-600">
+            قد نقوم بجمع المعلومات التالية:
           </p>
-          <ul className="list-disc pl-6 mt-2 text-gray-600">
-            <li>معلومات التعريف الشخصية (الاسم، البريد الإلكتروني، رقم الهاتف)</li>
-            <li>تفضيلات ومتطلبات العقارات</li>
-            <li>المعلومات المالية لمعاملات العقارات</li>
-            <li>بيانات الاستخدام ومعلومات تفاعل الموقع</li>
+          <ul className="list-disc pl-6 mt-2 text-grey-600">
+            <li>الاسم والمعلومات الشخصية الأساسية</li>
+            <li>معلومات الاتصال بما في ذلك عنوان البريد الإلكتروني ورقم الهاتف</li>
+            <li>المعلومات الديموغرافية مثل الرمز البريدي والتفضيلات والاهتمامات</li>
+            <li>معلومات أخرى ذات صلة لاستطلاعات العملاء والعروض</li>
+            <li>تفضيلات العقارات وسجل البحث على موقعنا</li>
           </ul>
         </section>
 
-        <section>
-          <h2 className="text-2xl font-bold mb-4">3. كيفية استخدام معلوماتك</h2>
-          <p className="text-gray-600">
-            نستخدم المعلومات المجمعة من أجل:
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold mb-4 text-primary-600">كيف نستخدم المعلومات</h2>
+          <p className="text-grey-600">
+            نحن نستخدم هذه المعلومات لفهم احتياجاتك بشكل أفضل ولتقديم خدمة أفضل، وبشكل خاص للأسباب التالية:
           </p>
-          <ul className="list-disc pl-6 mt-2 text-gray-600">
-            <li>تقديم وتحسين خدماتنا</li>
-            <li>معالجة معاملات العقارات</li>
-            <li>التواصل معك بشأن العقارات والخدمات</li>
-            <li>تحليل استخدام الموقع وتحسين تجربة المستخدم</li>
-            <li>الامتثال للالتزامات القانونية</li>
+          <ul className="list-disc pl-6 mt-2 text-grey-600">
+            <li>تحسين منتجاتنا وخدماتنا</li>
+            <li>تخصيص موقع الويب وفقًا لاهتماماتك</li>
+            <li>إرسال رسائل بريد إلكتروني ترويجية حول المنتجات الجديدة أو العروض الخاصة</li>
+            <li>الاتصال بك لأغراض بحث السوق</li>
+            <li>تقديم عروض عقارية تتناسب مع احتياجاتك</li>
           </ul>
         </section>
 
-        <section>
-          <h2 className="text-2xl font-bold mb-4">4. مشاركة المعلومات</h2>
-          <p className="text-gray-600">
-            نحن لا نبيع أو نؤجر معلوماتك الشخصية لأطراف ثالثة. قد نشارك معلوماتك مع:
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold mb-4 text-primary-600">أمان معلوماتك</h2>
+          <p className="text-grey-600">
+            نلتزم بضمان أمان معلوماتك. لمنع الوصول غير المصرح به أو الكشف عنها، وضعنا إجراءات مادية وإلكترونية وإدارية مناسبة لحماية المعلومات التي نجمعها عبر الإنترنت.
           </p>
-          <ul className="list-disc pl-6 mt-2 text-gray-600">
-            <li>مقدمي الخدمات الذين يساعدون في عملياتنا</li>
-            <li>السلطات القانونية عند الاقتضاء بموجب القانون</li>
-            <li>الأطراف المشاركة في معاملات العقارات بموافقتك</li>
+          <ul className="list-disc pl-6 mt-2 text-grey-600">
+            <li>استخدام التشفير لحماية البيانات الحساسة</li>
+            <li>استخدام حماية بكلمة مرور وجدران الحماية</li>
+            <li>مراجعة منتظمة لممارسات تخزين ومعالجة المعلومات</li>
           </ul>
         </section>
 
-        <section>
-          <h2 className="text-2xl font-bold mb-4">5. أمن البيانات</h2>
-          <p className="text-gray-600">
-            ننفذ إجراءات أمنية مناسبة لحماية معلوماتك الشخصية من الوصول غير المصرح به أو التعديل أو الكشف أو التدمير.
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold mb-4 text-primary-600">ملفات تعريف الارتباط</h2>
+          <p className="text-grey-600">
+            موقعنا يستخدم ملفات تعريف الارتباط لتحسين تجربة المستخدم. ملفات تعريف الارتباط هي ملفات صغيرة يتم وضعها على القرص الصلب لجهاز الكمبيوتر الخاص بك لمساعدتنا في تقديم تجربة أفضل. يمكنك اختيار قبول أو رفض ملفات تعريف الارتباط.
           </p>
         </section>
 
-        <section>
-          <h2 className="text-2xl font-bold mb-4">6. حقوقك</h2>
-          <p className="text-gray-600">
-            لديك الحق في:
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold mb-4 text-primary-600">الروابط لمواقع أخرى</h2>
+          <p className="text-grey-600">
+            قد يحتوي موقعنا على روابط لمواقع أخرى ذات اهتمام. ومع ذلك، بمجرد استخدام هذه الروابط لمغادرة موقعنا، يجب أن تلاحظ أنه ليس لدينا أي سيطرة على الموقع الآخر. لذلك، لا يمكننا أن نكون مسؤولين عن حماية وخصوصية أي معلومات تقدمها أثناء زيارة هذه المواقع وهذه المواقع لا تخضع لبيان الخصوصية هذا.
           </p>
-          <ul className="list-disc pl-6 mt-2 text-gray-600">
-            <li>الوصول إلى معلوماتك الشخصية</li>
-            <li>تصحيح المعلومات غير الدقيقة</li>
-            <li>طلب حذف معلوماتك</li>
-            <li>الانسحاب من الاتصالات التسويقية</li>
+          <ul className="list-disc pl-6 mt-2 text-grey-600">
+            <li>يجب توخي الحذر ومراجعة بيان الخصوصية المطبق على موقع الويب المعني</li>
+            <li>نحن لا نتحمل أي مسؤولية عن محتوى أو ممارسات الخصوصية للمواقع الخارجية</li>
           </ul>
         </section>
 
-        <section>
-          <h2 className="text-2xl font-bold mb-4">7. اتصل بنا</h2>
-          <p className="text-gray-600">
-            إذا كان لديك أي أسئلة حول سياسة الخصوصية هذه، يرجى الاتصال بنا على:
+        <section className="mb-8">
+          <h2 className="text-2xl font-bold mb-4 text-primary-600">التحكم في معلوماتك الشخصية</h2>
+          <p className="text-grey-600">
+            يمكنك اختيار تقييد جمع أو استخدام معلوماتك الشخصية بالطرق التالية:
           </p>
-          <p className="mt-2 text-gray-600">
-            البريد الإلكتروني: aqarathomsia@gmail.com<br />
-            الهاتف: +963 123 456 789<br />
-            العنوان: سوريا, حمص
+          <p className="mt-2 text-grey-600">
+            إذا قمت سابقًا بالموافقة على استخدام معلوماتك الشخصية لأغراض التسويق المباشر، فقد تغير رأيك في أي وقت عن طريق الاتصال بنا. سنوفر لك وسيلة لطلب نسخة من المعلومات الشخصية التي نحتفظ بها عنك، وطلب تصحيح أي بيانات غير دقيقة.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold mb-4">8. تحديثات هذه السياسة</h2>
-          <p className="text-gray-600">
-            قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. ستكون أحدث نسخة متاحة دائماً على موقعنا الإلكتروني.
+          <h2 className="text-2xl font-bold mb-4 text-primary-600">تحديثات على هذه السياسة</h2>
+          <p className="text-grey-600">
+            نراجع سياستنا بانتظام ونضع أي تحديثات على هذه الصفحة. تم تحديث هذه السياسة آخر مرة في 1 يونيو 2023.
           </p>
         </section>
       </div>

@@ -1,77 +1,81 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "/images/8a58f04b-80c2-4a84-a838-98f456a64eb8_removalai_preview.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
 
   return (
-    <nav className="bg-white shadow-lg">
+    <nav 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled 
+          ? "bg-white/95 backdrop-blur-lg shadow-soft " 
+          : "bg-gradient-to-b from-white to-white/90 py-4"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0">
-              <img
-                src={logo}
-                alt="Aqarat Homsia Logo"
-                className="w-36 h-auto"
-              />
+            <Link to="/" className="flex-shrink-0 group">
+              <div className="relative overflow-hidden">
+                {/* Logo with transparent background */}
+                <img
+                  src={logo}
+                  alt="Aqarat Homsia Logo"
+                  className={`w-36 h-auto transition-transform duration-300 ${
+                    scrolled ? "scale-90" : ""
+                  } group-hover:scale-105`}
+                  style={{
+                    filter: "brightness(0.9) sepia(1) hue-rotate(155deg) saturate(2) contrast(1.2)",
+                    mixBlendMode: "multiply",
+                    backgroundColor: "transparent"
+                  }}
+                />
+                {/* Gold accent effect - more transparent */}
+                <div className="absolute top-0 left-0 h-full w-full opacity-10 bg-gradient-to-br from-transparent via-secondary-500/20 to-transparent pointer-events-none"></div>
+              </div>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Link
-              to="/"
-              className="text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
-            >
-              الرئيسية
-            </Link>
-            <Link
-              to="/sale-properties"
-              className="text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
-            >
-              عروض البيع
-            </Link>
-            <Link
-              to="/rent-properties"
-              className="text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
-            >
-              عروض الأجار
-            </Link>
-            <Link
-              to="/contact"
-              className="text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
-            >
-              اتصل بنا
-            </Link>
-            <Link
-              to="/about"
-              className="text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
-            >
-              من نحن
-            </Link>
-            <Link
-              to="/user-guide"
-              className="text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-sm font-semibold transition-colors duration-200"
-            >
-              دليل المستخدم
-            </Link>
+          <div className="hidden md:flex items-center space-x-6">
+            <NavLink to="/" label="الرئيسية" />
+            <NavLink to="/sale-properties" label="عروض البيع" />
+            <NavLink to="/rent-properties" label="عروض الأجار" />
+            <NavLink to="/contact" label="اتصل بنا" />
+            <NavLink to="/about" label="من نحن" />
+            <NavLink to="/user-guide" label="دليل المستخدم" />
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-blue-50 focus:outline-none transition-colors duration-200"
+              className="inline-flex items-center justify-center p-3 rounded-full bg-gradient-primary text-white hover:shadow-md focus:outline-none transition-all duration-300"
+              aria-expanded={isOpen}
             >
               <span className="sr-only">فتح القائمة</span>
               {isOpen ? (
-                <FaTimes className="h-6 w-6" />
+                <FaTimes className="h-5 w-5" />
               ) : (
-                <FaBars className="h-6 w-6" />
+                <FaBars className="h-5 w-5" />
               )}
             </button>
           </div>
@@ -79,49 +83,62 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      {isOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
-          <div className="px-4 pt-2 pb-3 space-y-1">
-            <Link
-              to="/"
-              className="block text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200"
-            >
-              الرئيسية
-            </Link>
-            <Link
-              to="/sale-properties"
-              className="block text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200"
-            >
-              عروض البيع
-            </Link>
-            <Link
-              to="/rent-properties"
-              className="block text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200"
-            >
-              عروض الأجار
-            </Link>
-            <Link
-              to="/contact"
-              className="block text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200"
-            >
-              اتصل بنا
-            </Link>
-            <Link
-              to="/about"
-              className="block text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200"
-            >
-              من نحن
-            </Link>
-            <Link
-              to="/user-guide"
-              className="block text-gray-700 hover:text-white hover:bg-sky-900 px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200"
-            >
-              دليل المستخدم
-            </Link>
+      <div 
+        className={`md:hidden transition-all duration-500 ease-in-out overflow-hidden ${
+          isOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="bg-white/95 backdrop-blur-lg mx-4 my-4 rounded-2xl shadow-soft border border-grey-100">
+          <div className="p-5 space-y-3">
+            <MobileNavLink to="/" label="الرئيسية" />
+            <MobileNavLink to="/sale-properties" label="عروض البيع" />
+            <MobileNavLink to="/rent-properties" label="عروض الأجار" />
+            <MobileNavLink to="/contact" label="اتصل بنا" />
+            <MobileNavLink to="/about" label="من نحن" />
+            <MobileNavLink to="/user-guide" label="دليل المستخدم" />
           </div>
         </div>
-      )}
+      </div>
     </nav>
+  );
+};
+
+const NavLink = ({ to, label }) => {
+  const location = useLocation();
+  const isActive = location.pathname === to;
+  
+  return (
+    <Link
+      to={to}
+      className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full ${
+        isActive 
+          ? "bg-gradient-primary text-white" 
+          : "text-grey-800 hover:text-primary-600 hover:bg-grey-50"
+      }`}
+    >
+      {label}
+      {!isActive && (
+        <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary-500 transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100" />
+      )}
+    </Link>
+  );
+};
+
+const MobileNavLink = ({ to, label }) => {
+  const location = useLocation();
+  const isActive = location.pathname === to;
+  
+  return (
+    <Link
+      to={to}
+      className={`block px-5 py-3 rounded-xl text-center text-base font-medium transition-all duration-300 ${
+        isActive 
+          ? "bg-gradient-primary text-white shadow-md" 
+          : "bg-grey-50 text-grey-800 hover:bg-grey-100 hover:text-primary-600"
+      }`}
+    >
+      {label}
+    </Link>
   );
 };
 

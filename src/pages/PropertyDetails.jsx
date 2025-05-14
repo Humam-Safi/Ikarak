@@ -5,6 +5,7 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import PropertyCard from "./propertyCard";
 import propertiesData from "../data/properties.json";
 import Map from "../components/common/Map";
+import AnimatedTitle from "../components/common/AnimatedTitle";
 
 const PropertyDetails = () => {
   const { id } = useParams();
@@ -57,8 +58,8 @@ const PropertyDetails = () => {
         {/* Left Side - Property Details */}
         <div className="order-2 md:order-1 bg-white p-6 rounded-lg shadow-lg">
           <h1 className="text-3xl font-bold mb-4">{property.title}</h1>
-          <p className="text-2xl font-bold text-sky-900 mb-4">{(Number(property.price))>500000 ?Number(property.price).toLocaleString() + "ل.س" : Number(property.price).toLocaleString()+"$"}</p>
-          <p className="text-lg text-gray-600 mb-6">{property.location}</p>
+          <p className="text-2xl font-bold text-primary-900 mb-4">{(Number(property.price))>500000 ?Number(property.price).toLocaleString() + "ل.س" : Number(property.price).toLocaleString()+"$"}</p>
+          <p className="text-lg text-grey-600 mb-6">{property.location}</p>
 
           <div className="grid grid-cols-2 gap-4 mb-6">
             <div className="border p-3 rounded">
@@ -79,7 +80,7 @@ const PropertyDetails = () => {
             <h2 className="text-xl font-bold mb-3">المميزات</h2>
             <ul className="list-disc list-inside">
               {property.features?.map((feature, index) => (
-                <li key={index} className="text-gray-700">{feature}</li>
+                <li key={index} className="text-grey-700">{feature}</li>
               ))}
             </ul>
           </div>
@@ -91,7 +92,7 @@ const PropertyDetails = () => {
         {/* Map */}
         <div className="bg-white p-6 rounded-lg shadow-lg h-[450px]">
           {/* Add your map component here */}
-          <div className="h-full bg-gray-200 rounded">
+          <div className="h-full bg-grey-200 rounded">
             <Map />
           </div>
         </div>
@@ -100,7 +101,7 @@ const PropertyDetails = () => {
         <div className="bg-white p-6 rounded-lg shadow-lg">
           <h2 className="text-2xl font-bold mb-4">معلومات إضافية</h2>
           <div className="space-y-4">
-            <p className="text-gray-700">{property.description}</p>
+            <p className="text-grey-700">{property.description}</p>
             {/* Add more property details here */}
           </div>
         </div>
@@ -108,10 +109,14 @@ const PropertyDetails = () => {
 
       {/* Related Properties */}
       <div className="mt-12">
-      <h1 className="text-4xl md:text-5xl font-extrabold from-sky-300 to-sky-900 text-center mb-4 font-arabic bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-sky-900 animate-slideIn">
-            عقارات مشابهة
-          </h1>
-          <div className="w-32 h-1 mx-auto mb-8 bg-gradient-to-r from-sky-300 to-sky-600 rounded-full shadow-md"></div>
+        <div className="section-title">
+          <AnimatedTitle
+            text="عقارات مشابهة"
+            tag="h1"
+            animation="shimmer"
+            className="font-extrabold"
+          />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {relatedProperties.map((relatedProperty) => (
             <PropertyCard
