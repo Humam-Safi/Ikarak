@@ -25,9 +25,13 @@ const Footer = () => {
             style={{
               top: `${Math.random() * 100}%`,
               left: `${Math.random() * 100}%`,
-              animation: `float ${5 + Math.random() * 10}s linear infinite, pulse ${2 + Math.random() * 3}s ease-in-out infinite alternate`,
+              animation: `float ${
+                5 + Math.random() * 10
+              }s linear infinite, pulse ${
+                2 + Math.random() * 3
+              }s ease-in-out infinite alternate`,
               opacity: Math.random() * 0.05 + 0.025,
-              filter: 'blur(50px)',
+              filter: "blur(50px)",
               transform: `scale(${Math.random() * 2 + 0.5})`,
             }}
           ></div>
@@ -36,7 +40,11 @@ const Footer = () => {
 
       {/* Wave decoration at the top */}
       <div className="absolute top-0 left-0 right-0 transform rotate-180">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" className="w-full h-auto fill-grey-800">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 60"
+          className="w-full h-auto fill-grey-800"
+        >
           <path d="M0,32L80,37.3C160,43,320,53,480,53.3C640,53,800,43,960,42.7C1120,43,1280,53,1360,58.7L1440,64L1440,64L1360,64C1280,64,1120,64,960,64C800,64,640,64,480,64C320,64,160,64,80,64L0,64Z"></path>
         </svg>
       </div>
@@ -45,83 +53,156 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Us - with fade-in-up animation */}
           <div
-            className={`transform transition-all duration-1000 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-              }`}
-            style={{ transitionDelay: '100ms' }}
+            className={`transform transition-all duration-1000 ease-out ${
+              isVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-10 opacity-0"
+            }`}
+            style={{ transitionDelay: "100ms" }}
           >
-            <h3 style={{
-              color: "white"
-            }} className="text-xl font-bold mb-4 border-b border-primary-500 pb-2 w-fit relative">
-              عن عقارات حمصية
+            <h3
+              style={{
+                color: "white",
+              }}
+              className="text-xl font-bold mb-4 border-b border-primary-500 pb-2 w-fit relative"
+            >
+              عن عُمرَانَك
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary-400 to-primary-600 animate-gradient-shift"></span>
             </h3>
             <p className="text-grey-300">
-              شركة عقارات رائدة في حمص، سوريا. نقدم مجموعة واسعة من خدمات العقارات لتلبية احتياجات عملائنا.
+              شركة عقارات رائدة في حمص، سوريا. نقدم مجموعة واسعة من خدمات
+              العقارات لتلبية احتياجات عملائنا.
             </p>
           </div>
 
           {/* Quick Links - with fade-in-up animation */}
           <div
-            className={`transform transition-all duration-1000 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-              }`}
-            style={{ transitionDelay: '200ms' }}
+            className={`transform transition-all duration-1000 ease-out ${
+              isVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-10 opacity-0"
+            }`}
+            style={{ transitionDelay: "200ms" }}
           >
-            <h3 style={{
-              color: "white"
-            }} className="text-xl font-bold mb-4 border-b border-primary-500 pb-2 w-fit relative">
+            <h3
+              style={{
+                color: "white",
+              }}
+              className="text-xl font-bold mb-4 border-b border-primary-500 pb-2 w-fit relative"
+            >
               روابط سريعة
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary-400 to-primary-600 animate-gradient-shift"></span>
             </h3>
             <ul className="space-y-2">
-              <li><Link to="/about" className="text-grey-300 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block">من نحن</Link></li>
-              <li><Link to="/contact" className="text-grey-300 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block">اتصل بنا</Link></li>
-              <li><Link to="/properties" className="text-grey-300 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block">العقارات</Link></li>
+              <li>
+                <Link
+                  to="/about"
+                  className="text-grey-300 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block"
+                >
+                  من نحن
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="text-grey-300 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block"
+                >
+                  اتصل بنا
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/properties"
+                  className="text-grey-300 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block"
+                >
+                  العقارات
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Legal Links - with fade-in-up animation */}
           <div
-            className={`transform transition-all duration-1000 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-              }`}
-            style={{ transitionDelay: '300ms' }}
+            className={`transform transition-all duration-1000 ease-out ${
+              isVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-10 opacity-0"
+            }`}
+            style={{ transitionDelay: "300ms" }}
           >
-            <h3 style={{
-              color: "white"
-            }} className="text-xl font-bold mb-4 border-b border-primary-500 pb-2 w-fit relative">
+            <h3
+              style={{
+                color: "white",
+              }}
+              className="text-xl font-bold mb-4 border-b border-primary-500 pb-2 w-fit relative"
+            >
               روابط قانونية
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary-400 to-primary-600 animate-gradient-shift"></span>
             </h3>
             <ul className="space-y-2">
-              <li><Link to="/privacy-policy" className="text-grey-300 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block">سياسة الخصوصية</Link></li>
-              <li><Link to="/faq" className="text-grey-300 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block">الأسئلة الشائعة</Link></li>
-              <li><Link to="/user-guide" className="text-grey-300 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block">دليل المستخدم</Link></li>
+              <li>
+                <Link
+                  to="/privacy-policy"
+                  className="text-grey-300 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block"
+                >
+                  سياسة الخصوصية
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/faq"
+                  className="text-grey-300 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block"
+                >
+                  الأسئلة الشائعة
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/user-guide"
+                  className="text-grey-300 hover:text-white transition-all duration-300 hover:translate-x-1 inline-block"
+                >
+                  دليل المستخدم
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Contact Info - with fade-in-up animation */}
           <div
-            className={`transform transition-all duration-1000 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-              }`}
-            style={{ transitionDelay: '400ms' }}
+            className={`transform transition-all duration-1000 ease-out ${
+              isVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-10 opacity-0"
+            }`}
+            style={{ transitionDelay: "400ms" }}
           >
-            <h3 style={{
-              color: 'white'
-            }} className="text-xl font-bold mb-4 border-b border-primary-500 pb-2 w-fit relative">
+            <h3
+              style={{
+                color: "white",
+              }}
+              className="text-xl font-bold mb-4 border-b border-primary-500 pb-2 w-fit relative"
+            >
               اتصل بنا
               <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-primary-400 to-primary-600 animate-gradient-shift"></span>
             </h3>
             <ul className="space-y-2">
               <li className="flex items-center gap-2 group">
                 <FaMapMarkerAlt className="text-primary-500 group-hover:scale-110 transition-transform duration-300" />
-                <span className="text-grey-300 group-hover:text-white transition-colors duration-300">سوريا - حمص</span>
+                <span className="text-grey-300 group-hover:text-white transition-colors duration-300">
+                  سوريا - حمص
+                </span>
               </li>
               <li className="flex items-center gap-2 group">
                 <FaPhone className="text-primary-500 group-hover:scale-110 transition-transform duration-300" />
-                <span className="text-grey-300 group-hover:text-white transition-colors duration-300">+963 967517632</span>
+                <span className="text-grey-300 group-hover:text-white transition-colors duration-300">
+                  +963 967517632
+                </span>
               </li>
               <li className="flex items-center gap-2 group">
                 <FaEnvelope className="text-primary-500 group-hover:scale-110 transition-transform duration-300" />
-                <span className="text-grey-300 group-hover:text-white transition-colors duration-300">aqarathomsia@gmail.com</span>
+                <span className="text-grey-300 group-hover:text-white transition-colors duration-300">
+                  aqarathomsia@gmail.com
+                </span>
               </li>
             </ul>
           </div>
@@ -129,19 +210,23 @@ const Footer = () => {
 
         {/* Bottom Footer - with fade-in animation */}
         <div
-          className={`mt-8 pt-8 border-t border-grey-800 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100' : 'opacity-0'
-            }`}
-          style={{ transitionDelay: '500ms' }}
+          className={`mt-8 pt-8 border-t border-grey-800 transition-all duration-1000 ease-out ${
+            isVisible ? "opacity-100" : "opacity-0"
+          }`}
+          style={{ transitionDelay: "500ms" }}
         >
           <div className="flex justify-center items-center mb-4">
-            <Link to="/" className="text-primary-400 hover:text-primary-300 font-bold relative transition-all duration-300 group text-center text-2xl">
-              عقارات حمصية
+            <Link
+              to="/"
+              className="text-primary-400 hover:text-primary-300 font-bold relative transition-all duration-300 group text-center text-2xl"
+            >
+              عُمرَانَك
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
             </Link>
           </div>
           <div className="mt-4 text-center ">
-            <p className="animate-pulse" style={{color:"white"}}>
-              &copy; جميع الحقوق محفوظة. عقارات حمصية  {new Date().getFullYear()}.
+            <p className="animate-pulse" style={{ color: "white" }}>
+              &copy; جميع الحقوق محفوظة. عُمرَانَك {new Date().getFullYear()}.
             </p>
           </div>
         </div>
@@ -161,7 +246,9 @@ const Footer = () => {
               width: `${Math.random() * 30 + 5}px`,
               height: `${Math.random() * 30 + 5}px`,
               opacity: Math.random() * 0.2 + 0.1,
-              animation: `float ${3 + Math.random() * 2}s ease-in-out infinite alternate`,
+              animation: `float ${
+                3 + Math.random() * 2
+              }s ease-in-out infinite alternate`,
               animationDelay: `${Math.random() * 2}s`,
             }}
           ></div>

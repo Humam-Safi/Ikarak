@@ -35,9 +35,15 @@ const Home = () => {
   useEffect(() => {
     try {
       const properties = propertiesData.properties || [];
-      setFeaturedProperties(properties.filter((property) => property.state === "featured"));
-      setOfferProperties(properties.filter((property) => property.state === "offer"));
-      setNewProperties(properties.filter((property) => property.state === "new"));
+      setFeaturedProperties(
+        properties.filter((property) => property.state === "featured")
+      );
+      setOfferProperties(
+        properties.filter((property) => property.state === "offer")
+      );
+      setNewProperties(
+        properties.filter((property) => property.state === "new")
+      );
     } catch (error) {
       console.error("Error loading properties:", error);
     } finally {
@@ -56,69 +62,83 @@ const Home = () => {
     transition: `all 0.4s ease-out ${0.1 + index * 0.1}s`, // Faster transition
   });
 
-  const PropertySection = React.memo(({ title, properties, link, animation, index }) => (
-    <div style={sectionTransform(index)} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12" dir="rtl">
-      <div className="flex items-center justify-center mb-8 relative">
-        <span className="w-12 h-1 bg-gradient-to-r from-primary-300 to-secondary-300 rounded-full mr-4"></span>
-        <AnimatedTitle
-          text={title}
-          tag="h2"
-          animation={animation}
-          className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-gray-900 bg-gradient-to-r from-primary-700 to-secondary-500 bg-clip-text text-transparent drop-shadow-md"
-          style={{ fontFamily: '"Tajawal", "Noto Sans Arabic", "Arial", sans-serif' }}
-          aria-label={title}
-        />
-        <span className="w-12 h-1 bg-gradient-to-r from-primary-300 to-secondary-300 rounded-full ml-4"></span>
-      </div>
-
-      {isLoading ? (
-        <div className="text-center py-12">
-          <div className="animate-pulse text-xl text-gray-600">جارٍ التحميل...</div>
-        </div>
-      ) : properties.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {properties.slice(0, 3).map((property, idx) => (
-            <div
-              key={property.id}
-              className="transform transition-all duration-300"
-              style={{
-                transitionDelay: `${idx * 0.05}s`, // Reduced delay
-                transform: isLoaded ? "translateY(0)" : "translateY(30px)",
-                opacity: isLoaded ? 1 : 0,
-              }}
-            >
-              <Suspense fallback={<div className="animate-pulse h-64 bg-gray-200 rounded-lg" />}>
-                <LazyPropertyCard
-                  img={property.image?.[0] || "/fallback-image.jpg"}
-                  type={property.type}
-                  kind={property.kind}
-                  location={property.location}
-                  title={property.title}
-                  price={property.price}
-                  bedrooms={property.bedrooms}
-                  bathrooms={property.bathrooms}
-                  area={property.area}
-                  features={property.features}
-                  id={property.id}
-                />
-              </Suspense>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <div className="text-center p-8 bg-white rounded-lg shadow-sm">
-          <p className="text-gray-600 text-lg">لا توجد عقارات متاحة حاليًا</p>
-        </div>
-      )}
-      <Link
-        to={link}
-        className="mt-8 mx-auto bg-primary-600  text-white px-6 py-3 rounded-full flex items-center gap-2 w-fit transition-all duration-300 "
+  const PropertySection = React.memo(
+    ({ title, properties, link, animation, index }) => (
+      <div
+        style={sectionTransform(index)}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12"
+        dir="rtl"
       >
-        عرض الكل
-        <FaArrowRight className="transform  transition-transform" />
-      </Link>
-    </div>
-  ));
+        <div className="flex items-center justify-center mb-8 relative">
+          <span className="w-12 h-1 bg-gradient-to-r from-primary-300 to-secondary-300 rounded-full mr-4"></span>
+          <AnimatedTitle
+            text={title}
+            tag="h2"
+            animation={animation}
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-gray-900 bg-gradient-to-r from-primary-700 to-secondary-500 bg-clip-text text-transparent drop-shadow-md"
+            style={{
+              fontFamily: '"Tajawal", "Noto Sans Arabic", "Arial", sans-serif',
+            }}
+            aria-label={title}
+          />
+          <span className="w-12 h-1 bg-gradient-to-r from-primary-300 to-secondary-300 rounded-full ml-4"></span>
+        </div>
+
+        {isLoading ? (
+          <div className="text-center py-12">
+            <div className="animate-pulse text-xl text-gray-600">
+              جارٍ التحميل...
+            </div>
+          </div>
+        ) : properties.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {properties.slice(0, 3).map((property, idx) => (
+              <div
+                key={property.id}
+                className="transform transition-all duration-300"
+                style={{
+                  transitionDelay: `${idx * 0.05}s`, // Reduced delay
+                  transform: isLoaded ? "translateY(0)" : "translateY(30px)",
+                  opacity: isLoaded ? 1 : 0,
+                }}
+              >
+                <Suspense
+                  fallback={
+                    <div className="animate-pulse h-64 bg-gray-200 rounded-lg" />
+                  }
+                >
+                  <LazyPropertyCard
+                    img={property.image?.[0] || "/fallback-image.jpg"}
+                    type={property.type}
+                    kind={property.kind}
+                    location={property.location}
+                    title={property.title}
+                    price={property.price}
+                    bedrooms={property.bedrooms}
+                    bathrooms={property.bathrooms}
+                    area={property.area}
+                    features={property.features}
+                    id={property.id}
+                  />
+                </Suspense>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center p-8 bg-white rounded-lg shadow-sm">
+            <p className="text-gray-600 text-lg">لا توجد عقارات متاحة حاليًا</p>
+          </div>
+        )}
+        <Link
+          to={link}
+          className="mt-8 mx-auto bg-primary-600  text-white px-6 py-3 rounded-full flex items-center gap-2 w-fit transition-all duration-300 "
+        >
+          عرض الكل
+          <FaArrowRight className="transform  transition-transform" />
+        </Link>
+      </div>
+    )
+  );
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -130,7 +150,7 @@ const Home = () => {
             backgroundImage: "url('/images/estate.jpg')",
             transform: `translateY(${heroParallax}px) scale(1.03)`, // Reduced scale
             filter: "brightness(0.65)",
-          }}
+          }}عُمرَانَك
           loading="lazy" // Suggest lazy loading attribute
         />
         <div className="absolute inset-0 bg-gradient-to-b from-primary-500/20 to-gray-900/90" />
@@ -143,18 +163,14 @@ const Home = () => {
               opacity: isLoaded ? 1 : 0,
             }}
           >
-            <div style={{ width: "100%", maxWidth: "500px", minWidth: "400px" }}>
+            <div
+              style={{ width: "100%", maxWidth: "500px", minWidth: "400px" }}
+            >
               <AnimatedTitle
-                text="مرحباً بكم في"
+                text="مرحباً بكم في عُمرَانَك " 
+                
                 animation="reveal"
                 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white py-4 mb-2"
-              />
-              <AnimatedTitle
-                text="عقارات حمصية"
-                tag="h1"
-                animation="gradient-shift"
-                className="text-4xl py-2 sm:text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-secondary-300 to-secondary-500"
-                delay={0.3}
               />
             </div>
           </div>
@@ -169,7 +185,10 @@ const Home = () => {
 
           <div
             className="transform transition-all duration-700 delay-900"
-            style={{ opacity: isLoaded ? 1 : 0, transform: isLoaded ? "scale(1)" : "scale(0.9)" }}
+            style={{
+              opacity: isLoaded ? 1 : 0,
+              transform: isLoaded ? "scale(1)" : "scale(0.9)",
+            }}
           >
             <Link
               to="/properties"
@@ -186,7 +205,10 @@ const Home = () => {
           {[
             { text: "موثوق", icon: <FaStar className="text-secondary-400" /> },
             { text: "سريع", icon: <FaClock className="text-secondary-400" /> },
-            { text: "شفافية", icon: <FaCheck className="text-secondary-400" /> },
+            {
+              text: "شفافية",
+              icon: <FaCheck className="text-secondary-400" />,
+            },
           ].map((item, index) => (
             <div
               key={index}
@@ -198,13 +220,19 @@ const Home = () => {
               }}
             >
               {item.icon}
-              <span className="text-white text-sm sm:text-base">{item.text}</span>
+              <span className="text-white text-sm sm:text-base">
+                {item.text}
+              </span>
             </div>
           ))}
         </div>
 
         <div className="absolute bottom-0 left-0 right-0">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" className="w-full fill-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1440 120"
+            className="w-full fill-white"
+          >
             <path d="M0,64L80,69.3C160,75,320,85,480,90.7C640,96,800,96,960,85.3C1120,75,1280,53,1360,42.7L1440,32L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z" />
           </svg>
         </div>
@@ -237,7 +265,11 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <Suspense fallback={<div className="py-16 text-center text-gray-600">جارٍ التحميل...</div>}>
+      <Suspense
+        fallback={
+          <div className="py-16 text-center text-gray-600">جارٍ التحميل...</div>
+        }
+      >
         <LazyWhatWeDo />
       </Suspense>
 
