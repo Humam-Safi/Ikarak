@@ -64,8 +64,8 @@ const FAQ = () => {
               onClick={() => toggleFAQ(index)}
             >
               <div className="flex justify-between items-center">
-                <h3 className="font-bold">{faq.question}</h3>
-                <span className={`text-xl transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""}`}>
+                <h4 className="">{faq.question}</h4>
+                <span className={`text-xl text-black transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""}`}>
                   {openIndex === index ? "−" : "+"}
                 </span>
               </div>

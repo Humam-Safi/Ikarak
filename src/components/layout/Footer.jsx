@@ -139,9 +139,9 @@ const Footer = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
             </Link>
           </div>
-          <div className="mt-4 text-center text-grey-400">
-            <p className="animate-pulse">
-              &copy; {new Date().getFullYear()} عقارات حمصية. جميع الحقوق محفوظة.
+          <div className="mt-4 text-center ">
+            <p className="animate-pulse" style={{color:"white"}}>
+              &copy; جميع الحقوق محفوظة. عقارات حمصية  {new Date().getFullYear()}.
             </p>
           </div>
         </div>

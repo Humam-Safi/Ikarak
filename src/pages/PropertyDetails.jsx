@@ -30,6 +30,31 @@ const PropertyDetails = () => {
     }
   }, [id, properties]);
 
+  useEffect(() => {
+    if (property) {
+      const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "RealEstateListing",
+        "name": property.title,
+        "description": property.description,
+        "price": property.price,
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": property.location
+        }
+      };
+
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(structuredData);
+      document.head.appendChild(script);
+
+      return () => {
+        document.head.removeChild(script);
+      };
+    }
+  }, [property]);
+
   if (!property) {
     return <div className="container mx-auto px-4 py-8">Loading...</div>;
   }
@@ -58,11 +83,11 @@ const PropertyDetails = () => {
         {/* Left Side - Property Details */}
         <div className="order-2 md:order-1 bg-white p-6 rounded-lg shadow-lg">
           <h1 className="text-3xl font-bold mb-4">{property.title}</h1>
-          <p className="text-2xl font-bold text-primary-900 mb-4">{(Number(property.price))>500000 ?Number(property.price).toLocaleString() + "ل.س" : Number(property.price).toLocaleString()+"$"}</p>
+          <p className="text-2xl font-bold  mb-4">{(Number(property.price))>500000 ?Number(property.price).toLocaleString() + "ل.س" : Number(property.price).toLocaleString()+"$"}</p>
           <p className="text-lg text-grey-600 mb-6">{property.location}</p>
 
-          <div className="grid grid-cols-2 gap-4 mb-6">
-            <div className="border p-3 rounded">
+          <div className="grid text-black grid-cols-2 gap-4 mb-6">
+            <div className="border  p-3 rounded">
               <span className="font-bold">النوع:</span> {property.type}
             </div>
             <div className="border p-3 rounded">

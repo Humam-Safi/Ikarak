@@ -70,6 +70,8 @@ const PropertyCard = memo((props) => {
                 loading="lazy"
                 width="400"
                 height="300"
+                srcSet={`${props.img} 400w, ${props.img} 800w`}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 onError={handleImageError}
               />
             )}
@@ -78,23 +80,18 @@ const PropertyCard = memo((props) => {
             <div className={`absolute inset-0 bg-gradient-to-t from-grey-900/70 via-transparent to-transparent transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}></div>
           </div>
           
-          <span className="absolute top-3 right-3 z-10 bg-primary-600/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1 shadow-sm">
+          <span className="absolute top-3 right-3 z-10 bg-primary-600/90 backdrop-blur-sm text-black px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1 shadow-sm">
             <FaStar className="text-secondary-300" />
             {props.type}
           </span>
           
-          <span className="absolute bottom-3 left-3 z-10 bg-secondary-500/90 backdrop-blur-sm text-grey-900 px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1 shadow-sm transform transition-transform duration-300 translate-y-0">
+          <span className="absolute bottom-3 left-3 z-10 bg-secondary-500/90 backdrop-blur-sm text-black px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1 shadow-sm transform transition-transform duration-300 translate-y-0">
             {props.kind}
           </span>
         </div>
         
         <div className="p-5 md:p-6">
-          <AnimatedTitle
-            text={props.title}
-            tag="h3"
-            animation="shadow"
-            className="text-lg md:text-xl font-bold mb-2 text-grey-900 hover:text-primary-600 transition-colors duration-300"
-          />
+          <h4>{props.title}</h4>
           <p className="text-grey-700 mb-4 flex items-center gap-1.5">
             <FaMapMarkerAlt className="text-primary-500" />
             {props.location}
@@ -117,12 +114,7 @@ const PropertyCard = memo((props) => {
 
           <div className="border-t border-grey-100 pt-4">
             <div className="text-sm mb-4">
-              <AnimatedTitle
-                text="مميزات:"
-                tag="h4"
-                animation="glow"
-                className="font-semibold mb-2 text-grey-900"
-              />
+              <h4 className="font-semibold text-grey-800">مميزات العقار:</h4>
               <div className="flex flex-wrap gap-2">
                 {props.features?.map((feature, index) => (
                   <span
@@ -136,7 +128,7 @@ const PropertyCard = memo((props) => {
             </div>
 
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mt-5">
-              <span className="font-bold text-lg md:text-xl text-primary-700 bg-primary-50 px-3 py-1 rounded-md">
+              <span className="font-bold text-lg md:text-xl text-primary-700  px-3 py-1 rounded-md">
                 {priceCurrency}
               </span>
               <Link

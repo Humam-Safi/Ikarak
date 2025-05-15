@@ -41,7 +41,7 @@
   }
 
   a {
-    @apply text-primary-600 transition-colors duration-200 hover:text-primary-700;
+    @apply text-primary-600 transition-colors duration-200 ;
     opacity: 1 !important;
   }
   

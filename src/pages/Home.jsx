@@ -9,10 +9,7 @@ import {
   FaWhatsapp,
   FaPhone,
 } from "react-icons/fa";
-import PropertyCard from "./propertyCard";
 import propertiesData from "../data/properties.json";
-import WhatWeDo from "./whatWeDo";
-import AnimatedSection from "../components/common/AnimatedSection";
 import AnimatedTitle from "../components/common/AnimatedTitle";
 
 // Lazy load components
@@ -116,26 +113,16 @@ const Home = () => {
       )}
       <Link
         to={link}
-        className="mt-8 mx-auto bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-full flex items-center gap-2 w-fit transition-all duration-300 group hover:shadow-md"
+        className="mt-8 mx-auto bg-primary-600  text-white px-6 py-3 rounded-full flex items-center gap-2 w-fit transition-all duration-300 "
       >
         عرض الكل
-        <FaArrowRight className="transform group-hover:translate-x-1 transition-transform" />
+        <FaArrowRight className="transform  transition-transform" />
       </Link>
     </div>
   ));
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <a
-        href="https://wa.me/963967517652"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110"
-        aria-label="التواصل عبر واتساب"
-      >
-        <FaWhatsapp className="text-2xl" />
-      </a>
-
       {/* Hero Section */}
       <section className="relative h-[80vh] overflow-hidden">
         <div
@@ -188,11 +175,11 @@ const Home = () => {
           >
             <Link
               to="/properties"
-              className="group relative bg-secondary-500 text-gray-900 px-6 py-3 rounded-full text-base sm:text-lg font-semibold hover:bg-secondary-400 transition-all duration-300 flex items-center gap-2 shadow-md hover:shadow-lg hover:-translate-y-1"
+              className="group relative bg-secondary-500 text-gray-900 px-6 py-3 rounded-full text-base sm:text-lg font-semibold  transition-all duration-300 flex items-center gap-2 shadow-md"
             >
-              <FaSearch className="text-lg group-hover:rotate-12 transition-transform" />
+              <FaSearch className="text-lg transition-transform" />
               تصفح العقارات
-              <FaArrowRight className="text-base group-hover:translate-x-1 transition-transform" />
+              <FaArrowRight className="text-base  transition-transform" />
             </Link>
           </div>
         </div>
@@ -201,7 +188,7 @@ const Home = () => {
           {[
             { text: "موثوق", icon: <FaStar className="text-secondary-400" /> },
             { text: "سريع", icon: <FaClock className="text-secondary-400" /> },
-            { text: "شفاف", icon: <FaCheck className="text-secondary-400" /> },
+            { text: "شفافية", icon: <FaCheck className="text-secondary-400" /> },
           ].map((item, index) => (
             <div
               key={index}

@@ -25,7 +25,7 @@ const SearchBar = ({ className = "", onSearch }) => {
           placeholder="ابحث عن عقارات..."
           value={searchTerm}
           onChange={handleSearchChange}
-          className="w-full pr-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+          className="w-full text-black pr-10 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
         />
       </div>
     </form>

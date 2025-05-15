@@ -7,6 +7,7 @@ import Footer from "./components/layout/Footer";
 import FloatingWhatsApp from "./components/common/FloatingWhatsApp";
 import ScrollToTop from "./components/common/ScrollToTop";
 import PageTransition from "./components/common/PageTransition";
+import ErrorBoundary from './components/common/ErrorBoundary';
 
 // Lazy load components
 const Home = lazy(() => import('./pages/Home'));
@@ -27,7 +28,8 @@ const RentProperties = lazy(() => import('./pages/RentProperties'));
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-50 flex flex-col">
+      <ErrorBoundary>
+        <div className="min-h-screen bg-gray-50 flex flex-col">
         <Navbar />
         <main className="pt-28 flex-grow">
           <Suspense fallback={<LoadingSpinner />}>
@@ -55,6 +57,7 @@ function App() {
         <FloatingWhatsApp />
         <ScrollToTop />
       </div>
+      </ErrorBoundary>
     </Router>
   );
 }

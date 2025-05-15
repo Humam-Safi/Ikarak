@@ -3,9 +3,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 const FloatingWhatsApp = () => {
   return (
-    <div style={{
-      display:"none"
-    }}>
+    <div className="fixed bottom-0 right-0 z-50">
       <a
         href="https://wa.me/00963967517652"
         target="_blank"
@@ -22,4 +20,4 @@ const FloatingWhatsApp = () => {
   );
 };
 
-export default FloatingWhatsApp; 
+export default FloatingWhatsApp;

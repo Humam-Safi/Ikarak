@@ -66,7 +66,7 @@ const FilterSidebar = () => {
           name="type"
           value={filter.type}
           onChange={(e) => HANDLE_FILTER_CHANGE("type", e.target.value)}
-          className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+          className="mt-1 block w-full pl-3 pr-10 py-2 text-black border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
         >
           {propertyTypes.map((type) => (
             <option key={type} value={type}>
@@ -89,7 +89,7 @@ const FilterSidebar = () => {
           name="bedrooms"
           value={filter.bedrooms}
           onChange={(e) => HANDLE_FILTER_CHANGE("bedrooms", e.target.value)}
-          className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+          className="mt-1 block w-full pl-3 pr-10 py-2 text-black border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
         >
           {bedroomOptions.map((option) => (
             <option key={option} value={option}>
@@ -112,7 +112,7 @@ const FilterSidebar = () => {
           name="bathrooms"
           value={filter.bathrooms}
           onChange={(e) => HANDLE_FILTER_CHANGE("bathrooms", e.target.value)}
-          className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+          className="mt-1 block w-full pl-3 pr-10 py-2 text-black border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
         >
           {bathroomOptions.map((option) => (
             <option key={option} value={option}>
@@ -138,7 +138,7 @@ const FilterSidebar = () => {
             HANDLE_FILTER_CHANGE("currency", e.target.value)
             handleCurrencyChange(e.target.value)
           }}
-          className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+          className="mt-1 block w-full pl-3 pr-10 py-2 text-black border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
         >
           {currencyOptions.map((option) => (
             <option key={option} value={option}>

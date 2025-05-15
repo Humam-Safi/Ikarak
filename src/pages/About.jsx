@@ -47,13 +47,14 @@ const About = () => {
               </p>
             </div>
             <div>
-              <img 
-                className="mt-[80px] h-[400px] rounded-lg w-[650px]" 
-                src={logo} 
+              <img
+                className="mt-[80px] h-[400px] rounded-lg w-[650px]"
+                src={logo}
                 style={{
-                  filter: "brightness(0.9) sepia(1) hue-rotate(155deg) saturate(2) contrast(1.2)",
+                  filter:
+                    "brightness(0.9) sepia(1) hue-rotate(155deg) saturate(2) contrast(1.2)",
                   mixBlendMode: "multiply",
-                  backgroundColor: "transparent"
+                  backgroundColor: "transparent",
                 }}
               />
             </div>
@@ -64,13 +65,14 @@ const About = () => {
       {/* Mission and Values Section */}
       <section className="py-16 bg-grey-50">
         <div className="max-w-7xl mx-auto px-[30px]">
-          <AnimatedTitle
-            text="مهمتنا و قيمنا"
-            tag="h1"
-            animation="shimmer"
-            className="text-4xl md:text-5xl font-extrabold text-center mb-4 font-arabic"
-          />
-          <div className="w-32 h-1 mx-auto mb-8 bg-gradient-to-r from-primary-300 to-primary-600 rounded-full shadow-md"></div>
+          <div className="section-title mb-8">
+            <AnimatedTitle
+              text="مهمتنا و قيمنا"
+              tag="h1"
+              animation="shimmer"
+              className="font-extrabold text-4xl md:text-5xl text-center"
+            />
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-md">
               <div className="bg-primary-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">

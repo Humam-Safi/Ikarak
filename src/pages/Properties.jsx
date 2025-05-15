@@ -68,12 +68,11 @@ const Properties = () => {
           animation="shimmer"
           className="font-extrabold text-4xl md:text-5xl text-center"
         />
-        <div className="w-32 h-1 mx-auto mt-4 bg-gradient-to-r from-primary-300 to-primary-600 rounded-full shadow-md"></div>
       </div>
     
       <div className="flex flex-col lg:flex-row gap-10">
         {/* Filter Sidebar */}
-        <div className="w-full lg:w-1/4 bg-white p-6 rounded-lg shadow-md border border-grey-200 h-max sticky top-20">
+        <div className="w-full lg:w-1/4 bg-white p-6 rounded-lg shadow-md border border-grey-200 h-max lg:sticky lg:top-20">
           <FilterSidebar />
         </div>
 
