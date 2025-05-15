@@ -49,7 +49,7 @@ const PropertyCard = memo((props) => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div className="relative overflow-hidden group">
+        <div className="relative overflow-hidden group cursor-pointer">
           <div className="h-52 sm:h-60 md:h-64 bg-grey-100 overflow-hidden">
             {imgError ? (
               <div className="w-full h-full flex items-center justify-center bg-grey-100">
@@ -80,12 +80,14 @@ const PropertyCard = memo((props) => {
             <div className={`absolute inset-0 bg-gradient-to-t from-grey-900/70 via-transparent to-transparent transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}></div>
           </div>
           
-          <span className="absolute top-3 right-3 z-10 bg-primary-600/90 backdrop-blur-sm text-black px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1 shadow-sm">
+          <span className="absolute top-3 right-3 z-10 bg-primary-600/90 backdrop-blur-sm text-orange-300 px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1 shadow-sm">
             <FaStar className="text-secondary-300" />
             {props.type}
           </span>
           
-          <span className="absolute bottom-3 left-3 z-10 bg-secondary-500/90 backdrop-blur-sm text-black px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1 shadow-sm transform transition-transform duration-300 translate-y-0">
+          <span style={{
+            fontWeight:"bold"
+          }} className="absolute top-3 text-white left-3 z-10 bg-secondary-500/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1 shadow-sm transform transition-transform duration-300 translate-y-0">
             {props.kind}
           </span>
         </div>

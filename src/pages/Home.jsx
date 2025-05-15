@@ -69,7 +69,6 @@ const Home = () => {
           aria-label={title}
         />
         <span className="w-12 h-1 bg-gradient-to-r from-primary-300 to-secondary-300 rounded-full ml-4"></span>
-        <div className="absolute w-24 h-1 bg-gradient-to-r from-primary-300 via-secondary-400 to-primary-300 rounded-full opacity-0 animate-underline" style={{ bottom: "-8px", transition: "opacity 0.3s ease-in-out" }}></div>
       </div>
 
       {isLoading ? (
@@ -144,10 +143,9 @@ const Home = () => {
               opacity: isLoaded ? 1 : 0,
             }}
           >
-            <div style={{ width: "500px" }}>
+            <div style={{ width: "100%", maxWidth: "500px", minWidth: "400px" }}>
               <AnimatedTitle
                 text="مرحباً بكم في"
-                tag="h1"
                 animation="reveal"
                 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white py-4 mb-2"
               />
