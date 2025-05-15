@@ -65,7 +65,7 @@ const Contact = () => {
             <h3 className="text-xl font-bold mb-2 text-grey-800">واتساب</h3>
             <p className="text-grey-600 hover:text-primary-900">
               <a href="https://wa.me/963967517652" target="_blank" rel="noopener noreferrer">
-                +963 967517652
+                963 967517652
               </a>
             </p>
           </div>

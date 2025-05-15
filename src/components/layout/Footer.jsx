@@ -202,7 +202,7 @@ const Footer = () => {
               <li className="flex items-center gap-2 group">
                 <FaPhone className="text-primary-500 group-hover:scale-110 transition-transform duration-300" />
                 <span className="text-grey-300 group-hover:text-white transition-colors duration-300">
-                  +963 967517632
+                  963 967517632
                 </span>
               </li>
               <li className="flex items-center gap-2 group">
