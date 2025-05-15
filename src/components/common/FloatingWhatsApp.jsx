@@ -3,7 +3,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 
 const FloatingWhatsApp = () => {
   return (
-    <div className="fixed bottom-0 right-0 z-50">
+    <div className="fixed bottom-0 right-0 z-50 animate-bounce-slow">
       <a
         href="https://wa.me/963967517652"
         target="_blank"
@@ -14,7 +14,7 @@ const FloatingWhatsApp = () => {
         <div className="absolute -top-10 right-0 bg-white px-4 py-2 rounded-lg shadow-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 whitespace-nowrap text-green-600">
           تواصل معنا على واتساب
         </div>
-        <FaWhatsapp className="text-2xl animate-bounce-slow" />
+        <FaWhatsapp className="text-2xl" />
       </a>
     </div>
   );

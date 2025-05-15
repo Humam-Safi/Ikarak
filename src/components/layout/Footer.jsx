@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
+import {
+  FaMapMarkerAlt,
+  FaPhone,
+  FaEnvelope,
+  FaWhatsapp,
+  FaFacebook,
+  FaInstagram,
+} from "react-icons/fa";
 
 const Footer = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -201,7 +208,7 @@ const Footer = () => {
               <li className="flex items-center gap-2 group">
                 <FaEnvelope className="text-primary-500 group-hover:scale-110 transition-transform duration-300" />
                 <span className="text-grey-300 group-hover:text-white transition-colors duration-300">
-                  aqarathomsia@gmail.com
+                  omranak27@gmail.com
                 </span>
               </li>
             </ul>
@@ -224,10 +231,36 @@ const Footer = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300 group-hover:w-full"></span>
             </Link>
           </div>
-          <div className="mt-4 text-center ">
+          <div className="mt-4 text-center">
             <p className="animate-pulse" style={{ color: "white" }}>
               &copy; جميع الحقوق محفوظة. عُمرَانَك {new Date().getFullYear()}.
             </p>
+            <div className="flex justify-center gap-4 mt-4">
+              <a
+                href="https://wa.me/963967517632"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-500 hover:text-primary-400 transition-colors duration-300"
+              >
+                <FaWhatsapp size={27} />
+              </a>
+              <a
+                href="https://www.facebook.com/share/15W9atfKaw/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-500 hover:text-primary-400 transition-colors duration-300"
+              >
+                <FaFacebook size={27} />
+              </a>
+              <a
+                href="https://www.instagram.com/omra.nak?igsh=b3JocHZuZW4zejhk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-500 hover:text-primary-400 transition-colors duration-300"
+              >
+                <FaInstagram size={27} />
+              </a>
+            </div>
           </div>
         </div>
       </div>

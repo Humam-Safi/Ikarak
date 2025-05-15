@@ -48,7 +48,7 @@ const About = () => {
             </div>
             <div>
               <img
-                className="mt-[80px] h-[500px] rounded-lg w-[650px]"
+                className="mt-[80px] h-[500px] rounded-lg w-[750px]"
                 src={logo}
                 style={{
                   filter:

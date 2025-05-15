@@ -121,7 +121,7 @@ const UserGuide = () => {
               </li>
               <li className="flex items-center text-grey-700 hover:text-primary-700 transition-colors duration-200">
                 <span className="w-2 h-2 bg-primary-700 rounded-full ml-3"></span>
-                إرسال بريد إلكتروني إلى: aqarathomsia@gmail.com
+                إرسال بريد إلكتروني إلى: omranak27@gmail.com
               </li>
               <li className="flex items-center text-grey-700 hover:text-primary-700 transition-colors duration-200">
                 <span className="w-2 h-2 bg-primary-700 rounded-full ml-3"></span>

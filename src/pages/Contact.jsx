@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { FaEnvelope, FaPhone, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import Toast from "../components/common/Toast";
 import AnimatedTitle from "../components/common/AnimatedTitle";
-import Map from "../components/common/Map";
-import { Link } from "react-router-dom";
 
 const Contact = () => {
 
@@ -56,7 +54,7 @@ const Contact = () => {
               href="mailto:aqarathomsia@gmail.com"
               className="text-grey-600 hover:text-primary-900"
             >
-              aqarathomsia@gmail.com
+              omranak27@gmail.com
             </a>
           </div>
 
