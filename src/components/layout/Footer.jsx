@@ -202,7 +202,7 @@ const Footer = () => {
               <li className="flex items-center gap-2 group">
                 <FaPhone className="text-primary-500 group-hover:scale-110 transition-transform duration-300" />
                 <span className="text-grey-300 group-hover:text-white transition-colors duration-300">
-                  963 967517632
+                  +963 967517632
                 </span>
               </li>
               <li className="flex items-center gap-2 group">
@@ -238,7 +238,6 @@ const Footer = () => {
             <div className="flex justify-center gap-4 mt-4">
               <a
                 href="https://wa.me/963967517632"
-                target="_blank"
                 rel="noopener noreferrer"
                 className="text-primary-500 hover:text-primary-400 transition-colors duration-300"
               >
