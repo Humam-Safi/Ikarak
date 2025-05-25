@@ -1,23 +1,23 @@
-import React, { useEffect } from 'react';
-import { FaSearch, FaInfoCircle, FaPhone, FaHome } from 'react-icons/fa';
-import AnimatedTitle from '../components/common/AnimatedTitle';
+import React, { useEffect } from "react";
+import { FaSearch, FaInfoCircle, FaPhone, FaHome } from "react-icons/fa";
+import AnimatedTitle from "../components/common/AnimatedTitle";
 
 const UserGuide = () => {
   useEffect(() => {
     // Add animation class to sections with a delay
-    const sections = document.querySelectorAll('.animate-section');
+    const sections = document.querySelectorAll(".animate-section");
     sections.forEach((section, index) => {
       setTimeout(() => {
-        section.classList.add('animate-fade-in-up');
+        section.classList.add("animate-fade-in-up");
       }, index * 200); // 200ms delay between each section
     });
   }, []);
 
   return (
-    <div className="min-h-screen bg-grey-50 py-12">
+    <div className="min-h-screen bg-grey-50 ">
       <div className="container mx-auto px-4">
         {/* Animated header */}
-        <div style={{ width: "100%", textAlign: 'center' }}>
+        <div style={{ width: "100%", textAlign: "center" }}>
           <AnimatedTitle
             text="دليل المستخدم"
             tag="h1"
@@ -40,7 +40,8 @@ const UserGuide = () => {
               />
             </div>
             <p className="text-grey-700 mb-4">
-              مرحباً بك في دليل استخدام موقع عقارات حمصية. هذا الدليل سيساعدك في فهم كيفية استخدام جميع ميزات الموقع بفعالية.
+              مرحباً بك في دليل استخدام موقع عُمرَانَك. هذا الدليل سيساعدك في
+              فهم كيفية استخدام جميع ميزات الموقع بفعالية.
             </p>
           </div>
 
@@ -58,7 +59,8 @@ const UserGuide = () => {
             <ul className="list-none space-y-4">
               <li className="flex items-center text-grey-700 hover:text-primary-700 transition-colors duration-200">
                 <span className="w-2 h-2 bg-primary-700 rounded-full ml-3"></span>
-                استخدم شريط البحث في الأعلى للبحث عن العقارات حسب الموقع أو النوع
+                استخدم شريط البحث في الأعلى للبحث عن العقارات حسب الموقع أو
+                النوع
               </li>
               <li className="flex items-center text-grey-700 hover:text-primary-700 transition-colors duration-200">
                 <span className="w-2 h-2 bg-primary-700 rounded-full ml-3"></span>
@@ -119,7 +121,7 @@ const UserGuide = () => {
               </li>
               <li className="flex items-center text-grey-700 hover:text-primary-700 transition-colors duration-200">
                 <span className="w-2 h-2 bg-primary-700 rounded-full ml-3"></span>
-                إرسال بريد إلكتروني إلى: aqarathomsia@gmail.com
+                إرسال بريد إلكتروني إلى: omranak27@gmail.com
               </li>
               <li className="flex items-center text-grey-700 hover:text-primary-700 transition-colors duration-200">
                 <span className="w-2 h-2 bg-primary-700 rounded-full ml-3"></span>

@@ -1,5 +1,5 @@
 import { FaCheck, FaClock, FaMoneyBillWave, FaPhone } from "react-icons/fa";
-import logo from "/images/8a58f04b-80c2-4a84-a838-98f456a64eb8_removalai_preview.png";
+import logo from "/images/logo.png";
 import AnimatedTitle from "../components/common/AnimatedTitle";
 
 const About = () => {
@@ -37,7 +37,7 @@ const About = () => {
                 className="text-3xl font-bold text-primary-800 mb-6"
               />
               <p className="text-grey-700 mb-4">
-                تأسست عقارك حمص في عام 2025, وكانت في طليعة صناعة العقارات في
+                تأسست عُمرَانَك في عام 2025, وكانت في طليعة صناعة العقارات في
                 سوريا. بدأنا بمهمة بسيطة: مساعدة الناس في العثور على منازلهم
                 المثالية وجعل عملية شراء العقارات سلسة قدر الإمكان.
               </p>
@@ -48,7 +48,7 @@ const About = () => {
             </div>
             <div>
               <img
-                className="mt-[80px] h-[400px] rounded-lg w-[650px]"
+                className="mt-[80px] h-[500px] rounded-lg w-[750px]"
                 src={logo}
                 style={{
                   filter:

@@ -7,18 +7,25 @@
       "kind": "أجار",
       "state": "new",
       "location": "سوريا ,حمص , الغوطة",
+      "city": "حمص",
       "latitude": 34.73275,
       "longitude": 36.699971,
       "price": 40000,
-      "image": [
-        "/images/estate.jpg",
-        "/images/image.jpg",
-        "/images/The-Importance-of-High-Quality-Real-Estate-Photos-v3.webp"
-      ],
+      "currency": "usd",
+      "image": ["/images/estate.jpg", "/images/image.jpg", "/images/image.jpg"],
       "bedrooms": 5,
       "bathrooms": 2,
       "area": 450,
-      "features": ["مسبح خاص", "حديقة واسعة", "إطلالة بحرية"]
+      "features": [
+        { "name": "مكيف", "has": false },
+        { "name": "مصعد", "has": false },
+        { "name": "حديقة", "has": true },
+        { "name": "موقف سيارات", "has": false },
+        { "name": "أمن 24/7", "has": false },
+        { "name": "إنترنت", "has": false },
+        { "name": "مسبح", "has": true },
+        { "name": "صالة رياضية", "has": false }
+      ]
     },
     {
       "id": 2,
@@ -27,9 +34,11 @@
       "kind": "أجار",
       "state": "new",
       "location": "سوريا ,حمص , الغوطة",
-      "latitude": 34.73275,
-      "longitude": 36.699971,
+      "city": "حمص",
+      "latitude": 34.73272342,
+      "longitude": 36.699332971,
       "price": 35000,
+      "currency": "usd",
       "image": [
         "/images/image.jpg",
         "/images/estate.jpg",
@@ -38,7 +47,16 @@
       "bedrooms": 5,
       "bathrooms": 2,
       "area": 450,
-      "features": ["مسبح خاص", "حديقة واسعة", "إطلالة بحرية"]
+      "features": [
+        { "name": "مكيف", "has": false },
+        { "name": "مصعد", "has": false },
+        { "name": "حديقة", "has": true },
+        { "name": "موقف سيارات", "has": false },
+        { "name": "أمن 24/7", "has": false },
+        { "name": "إنترنت", "has": false },
+        { "name": "مسبح", "has": true },
+        { "name": "صالة رياضية", "has": false }
+      ]
     },
     {
       "id": 3,
@@ -47,9 +65,11 @@
       "kind": "أجار",
       "state": "new",
       "location": "سوريا ,حمص , الغوطة",
-      "latitude": 34.73275,
-      "longitude": 36.699971,
+      "city": "حمص",
+      "latitude": 34.73274235,
+      "longitude": 36.699974321,
       "price": 55000,
+      "currency": "usd",
       "image": [
         "/images/The-Importance-of-High-Quality-Real-Estate-Photos-v3.webp",
         "/images/estate.jpg",
@@ -58,7 +78,16 @@
       "bedrooms": 5,
       "bathrooms": 2,
       "area": 450,
-      "features": ["مسبح خاص", "حديقة واسعة", "إطلالة بحرية"]
+      "features": [
+        { "name": "مكيف", "has": false },
+        { "name": "مصعد", "has": false },
+        { "name": "حديقة", "has": true },
+        { "name": "موقف سيارات", "has": false },
+        { "name": "أمن 24/7", "has": false },
+        { "name": "إنترنت", "has": false },
+        { "name": "مسبح", "has": true },
+        { "name": "صالة رياضية", "has": false }
+      ]
     },
     {
       "id": 4,
@@ -67,18 +96,25 @@
       "kind": "بيع",
       "state": "new",
       "location": "سوريا ,حمص , الغوطة",
-      "latitude": 34.73275,
-      "longitude": 36.699971,
+      "city": "حمص",
+      "latitude": 34.7327532432,
+      "longitude": 36.6999753241,
       "price": 5000000,
-      "image": [
-        "/images/OIP.jpeg",
-        "/images/image.jpg",
-        "/images/estate.jpg"
-      ],
+      "currency": "syp",
+      "image": ["/images/OIP.jpeg", "/images/image.jpg", "/images/estate.jpg"],
       "bedrooms": 5,
       "bathrooms": 2,
       "area": 450,
-      "features": ["مسبح خاص", "حديقة واسعة", "إطلالة بحرية"]
+      "features": [
+        { "name": "مكيف", "has": false },
+        { "name": "مصعد", "has": false },
+        { "name": "حديقة", "has": true },
+        { "name": "موقف سيارات", "has": false },
+        { "name": "أمن 24/7", "has": false },
+        { "name": "إنترنت", "has": false },
+        { "name": "مسبح", "has": true },
+        { "name": "صالة رياضية", "has": false }
+      ]
     },
     {
       "id": 5,
@@ -87,9 +123,11 @@
       "kind": "بيع",
       "state": "offer",
       "location": "الموقع 1, المدينة",
-      "latitude": 31.9545,
-      "longitude": 35.9095,
+      "city": "الحسكة",
+      "latitude": 34.9544325,
+      "longitude": 35.90955324,
       "price": 1200000,
+      "currency": "syp",
       "image": [
         "/images/OIP (1).jpeg",
         "/images/estate.jpg",
@@ -98,7 +136,16 @@
       "bedrooms": 3,
       "bathrooms": 1,
       "area": 150,
-      "features": ["شرفة", "موقف سيارات", "قريب من الخدمات"]
+      "features": [
+        { "name": "مكيف", "has": false },
+        { "name": "مصعد", "has": false },
+        { "name": "حديقة", "has": false },
+        { "name": "موقف سيارات", "has": true },
+        { "name": "أمن 24/7", "has": false },
+        { "name": "إنترنت", "has": false },
+        { "name": "مسبح", "has": false },
+        { "name": "صالة رياضية", "has": false }
+      ]
     },
     {
       "id": 6,
@@ -107,9 +154,11 @@
       "kind": "بيع",
       "state": "offer",
       "location": "الموقع 1, المدينة",
-      "latitude": 31.9545,
-      "longitude": 35.9095,
+      "city": "دمشق",
+      "latitude": 34.1343125,
+      "longitude": 35.90914125,
       "price": 1200000,
+      "currency": "syp",
       "image": [
         "/images/OIP (2).jpeg",
         "/images/image.jpg",
@@ -118,7 +167,16 @@
       "bedrooms": 3,
       "bathrooms": 1,
       "area": 150,
-      "features": ["شرفة", "موقف سيارات", "قريب من الخدمات"]
+      "features": [
+        { "name": "مكيف", "has": false },
+        { "name": "مصعد", "has": false },
+        { "name": "حديقة", "has": false },
+        { "name": "موقف سيارات", "has": true },
+        { "name": "أمن 24/7", "has": false },
+        { "name": "إنترنت", "has": false },
+        { "name": "مسبح", "has": false },
+        { "name": "صالة رياضية", "has": false }
+      ]
     },
     {
       "id": 7,
@@ -127,9 +185,11 @@
       "kind": "بيع",
       "state": "offer",
       "location": "الموقع 1, المدينة",
-      "latitude": 31.9545,
-      "longitude": 35.9095,
+      "city": "المدينة",
+      "latitude": 31.9542315,
+      "longitude": 35.9094325,
       "price": 1200000,
+      "currency": "syp",
       "image": [
         "/images/8a58f04b-80c2-4a84-a838-98f456a64eb8_removalai_preview.png",
         "/images/OIP.jpeg",
@@ -138,7 +198,16 @@
       "bedrooms": 3,
       "bathrooms": 1,
       "area": 150,
-      "features": ["شرفة", "موقف سيارات", "قريب من الخدمات"]
+      "features": [
+        { "name": "مكيف", "has": false },
+        { "name": "مصعد", "has": false },
+        { "name": "حديقة", "has": false },
+        { "name": "موقف سيارات", "has": true },
+        { "name": "أمن 24/7", "has": false },
+        { "name": "إنترنت", "has": false },
+        { "name": "مسبح", "has": false },
+        { "name": "صالة رياضية", "has": false }
+      ]
     },
     {
       "id": 8,
@@ -147,9 +216,11 @@
       "kind": "بيع",
       "state": "offer",
       "location": "الموقع 1, المدينة",
+      "city": "المدينة",
       "latitude": 31.9545,
       "longitude": 35.9095,
       "price": 1200000,
+      "currency": "syp",
       "image": [
         "/images/image.jpg",
         "/images/OIP (1).jpeg",
@@ -158,7 +229,16 @@
       "bedrooms": 3,
       "bathrooms": 1,
       "area": 150,
-      "features": ["شرفة", "موقف سيارات", "قريب من الخدمات"]
+      "features": [
+        { "name": "مكيف", "has": false },
+        { "name": "مصعد", "has": false },
+        { "name": "حديقة", "has": false },
+        { "name": "موقف سيارات", "has": true },
+        { "name": "أمن 24/7", "has": false },
+        { "name": "إنترنت", "has": false },
+        { "name": "مسبح", "has": false },
+        { "name": "صالة رياضية", "has": false }
+      ]
     },
     {
       "id": 9,
@@ -167,9 +247,11 @@
       "kind": "بيع",
       "state": "featured",
       "location": "الموقع 1, المدينة",
+      "city": "المدينة",
       "latitude": 31.9545,
       "longitude": 35.9095,
       "price": 800000,
+      "currency": "syp",
       "image": [
         "/images/OIP (2).jpeg",
         "/images/8a58f04b-80c2-4a84-a838-98f456a64eb8_removalai_preview.png",
@@ -178,7 +260,16 @@
       "bedrooms": 4,
       "bathrooms": 1,
       "area": 100,
-      "features": ["موقع مميز", "جاهزة للبناء"]
+      "features": [
+        { "name": "مكيف", "has": true },
+        { "name": "مصعد", "has": false },
+        { "name": "حديقة", "has": false },
+        { "name": "موقف سيارات", "has": false },
+        { "name": "أمن 24/7", "has": false },
+        { "name": "إنترنت", "has": false },
+        { "name": "مسبح", "has": false },
+        { "name": "صالة رياضية", "has": false }
+      ]
     },
     {
       "id": 10,
@@ -187,9 +278,11 @@
       "kind": "بيع",
       "state": "featured",
       "location": "الموقع 1, المدينة",
-      "latitude": 31.9545,
-      "longitude": 35.9095,
+      "city": "المدينة",
+      "latitude": 32.9545,
+      "longitude": 36.9095,
       "price": 800000,
+      "currency": "syp",
       "image": [
         "/images/The-Importance-of-High-Quality-Real-Estate-Photos-v3.webp",
         "/images/OIP.jpeg",
@@ -198,7 +291,16 @@
       "bedrooms": 4,
       "bathrooms": 1,
       "area": 100,
-      "features": ["موقع مميز", "جاهزة للبناء"]
+      "features": [
+        { "name": "مكيف", "has": true },
+        { "name": "مصعد", "has": false },
+        { "name": "حديقة", "has": false },
+        { "name": "موقف سيارات", "has": false },
+        { "name": "أمن 24/7", "has": false },
+        { "name": "إنترنت", "has": false },
+        { "name": "مسبح", "has": true },
+        { "name": "صالة رياضية", "has": false }
+      ]
     },
     {
       "id": 11,
@@ -207,9 +309,11 @@
       "kind": "بيع",
       "state": "featured",
       "location": "الموقع 1, المدينة",
+      "city": "المدينة",
       "latitude": 31.9545,
       "longitude": 35.9095,
       "price": 800000,
+      "currency": "syp",
       "image": [
         "/images/OIP (1).jpeg",
         "/images/estate.jpg",
@@ -218,7 +322,16 @@
       "bedrooms": 4,
       "bathrooms": 1,
       "area": 100,
-      "features": ["موقع مميز", "جاهزة للبناء"]
+      "features": [
+        { "name": "مكيف", "has": false },
+        { "name": "مصعد", "has": false },
+        { "name": "حديقة", "has": false },
+        { "name": "موقف سيارات", "has": false },
+        { "name": "أمن 24/7", "has": false },
+        { "name": "إنترنت", "has": false },
+        { "name": "مسبح", "has": false },
+        { "name": "صالة رياضية", "has": false }
+      ]
     },
     {
       "id": 12,
@@ -227,9 +340,11 @@
       "kind": "بيع",
       "state": "featured",
       "location": "الموقع 1, المدينة",
+      "city": "المدينة",
       "latitude": 31.9545,
       "longitude": 35.9095,
       "price": 800000,
+      "currency": "syp",
       "image": [
         "/images/image.jpg",
         "/images/OIP (2).jpeg",
@@ -238,7 +353,16 @@
       "bedrooms": 4,
       "bathrooms": 1,
       "area": 100,
-      "features": ["موقع مميز", "جاهزة للبناء"]
+      "features": [
+        { "name": "مكيف", "has": false },
+        { "name": "مصعد", "has": false },
+        { "name": "حديقة", "has": false },
+        { "name": "موقف سيارات", "has": false },
+        { "name": "أمن 24/7", "has": false },
+        { "name": "إنترنت", "has": false },
+        { "name": "مسبح", "has": false },
+        { "name": "صالة رياضية", "has": false }
+      ]
     }
   ]
 }

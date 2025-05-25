@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { FaEnvelope, FaPhone, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 import Toast from "../components/common/Toast";
 import AnimatedTitle from "../components/common/AnimatedTitle";
-import Map from "../components/common/Map";
-import { Link } from "react-router-dom";
 
 const Contact = () => {
 
@@ -14,7 +12,7 @@ const Contact = () => {
   return (
     <div
       className="relative min-h-screen bg-gradient-to-br from-primary-50
-      via-white to-primary-100 px-4 sm:px-6 lg:px-8 py-12 overflow-hidden"
+      via-white to-primary-100 px-4 sm:px-6 lg:px-8  overflow-hidden"
     >
       {/* Show toast notification if exists */}
       {toast && (
@@ -56,7 +54,7 @@ const Contact = () => {
               href="mailto:aqarathomsia@gmail.com"
               className="text-grey-600 hover:text-primary-900"
             >
-              aqarathomsia@gmail.com
+              omranak27@gmail.com
             </a>
           </div>
 
@@ -67,7 +65,7 @@ const Contact = () => {
             <h3 className="text-xl font-bold mb-2 text-grey-800">واتساب</h3>
             <p className="text-grey-600 hover:text-primary-900">
               <a href="https://wa.me/963967517652" target="_blank" rel="noopener noreferrer">
-                +963 967517652
+                963 967517652
               </a>
             </p>
           </div>
