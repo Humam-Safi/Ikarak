@@ -1,3 +1,5 @@
+import React, { memo, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   FaMapMarkerAlt,
   FaStar,
@@ -6,8 +8,6 @@ import {
   FaRulerCombined,
   FaArrowRight,
 } from "react-icons/fa";
-import React, { memo, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import PropertyCardEffect from "../components/common/PropertyCardEffect";
 import AnimatedTitle from "../components/common/AnimatedTitle";
 
@@ -58,8 +58,6 @@ const PropertyCard = memo((props) => {
                   alt={props.title || "Property"}
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                   loading="lazy"
-                  width="400"
-                  height="300"
                 />
               </div>
             ) : (
@@ -68,10 +66,6 @@ const PropertyCard = memo((props) => {
                 alt={props.title || "Property"}
                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 loading="lazy"
-                width="400"
-                height="300"
-                srcSet={`${props.img} 400w, ${props.img} 800w`}
-                sizes="(max-width: 768px) 100vw, 50vw"
                 onError={handleImageError}
               />
             )}
@@ -118,12 +112,14 @@ const PropertyCard = memo((props) => {
             <div className="text-sm mb-4">
               <h4 className="font-semibold text-grey-800">مميزات العقار:</h4>
               <div className="flex flex-wrap gap-2">
-                {props.features?.map((feature, index) => (
+                {props.features && Array.isArray(props.features) && props.features
+                  .filter(feature => feature.has)
+                  .map((feature, index) => (
                   <span
                     key={index}
                     className="bg-grey-50 px-3 py-1 rounded-full text-xs md:text-sm text-grey-800 hover:bg-primary-50 hover:text-primary-700 transition-colors duration-300"
                   >
-                    {feature}
+                    {feature.name}
                   </span>
                 ))}
               </div>

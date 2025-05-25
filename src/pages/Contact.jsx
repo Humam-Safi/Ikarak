@@ -12,7 +12,7 @@ const Contact = () => {
   return (
     <div
       className="relative min-h-screen bg-gradient-to-br from-primary-50
-      via-white to-primary-100 px-4 sm:px-6 lg:px-8 py-12 overflow-hidden"
+      via-white to-primary-100 px-4 sm:px-6 lg:px-8  overflow-hidden"
     >
       {/* Show toast notification if exists */}
       {toast && (

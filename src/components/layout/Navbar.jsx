@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
+<<<<<<< HEAD
 import logo from "/images/logo.png";
+=======
+>>>>>>> 8bdf4fc (upload)
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,12 +25,11 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-4 sm:px-2 lg:px-4 ${
-        scrolled 
-          ? "bg-white/95 backdrop-blur-lg shadow-soft " 
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-4 sm:px-2 lg:px-4 ${scrolled
+          ? "bg-white/95 backdrop-blur-lg shadow-soft "
           : "bg-gradient-to-b from-white to-white/90 py-1"
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-1 sm:px-2 lg:px-4">
         <div className="flex justify-between items-center">
@@ -37,11 +39,10 @@ const Navbar = () => {
               <div className="relative overflow-hidden">
                 {/* Logo with transparent background */}
                 <img
-                  src={logo}
+                  src="/images/logo.png"
                   alt="Aqarat Homsia Logo"
-                  className={`w-32 h-auto transition-transform duration-300 ${
-                    scrolled ? "scale-90" : ""
-                  } group-hover:scale-105`}
+                  className={`w-32 h-auto transition-transform duration-300 ${scrolled ? "scale-90" : ""
+                    } group-hover:scale-105`}
                   style={{
                     filter: "brightness(0.9) sepia(1) hue-rotate(155deg) saturate(2) contrast(1.2)",
                     mixBlendMode: "multiply",
@@ -83,14 +84,13 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div 
-        className={`md:hidden transition-all duration-500 ease-in-out overflow-hidden ${
-          isOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
-        }`}
+      <div
+        className={`md:hidden transition-all duration-500 ease-in-out overflow-hidden ${isOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <div className="bg-white/95 backdrop-blur-lg mx-1 my-1 rounded-xl shadow-soft border border-grey-100">
           <div className="p-2 space-y-4">
-            <MobileNavLink style={{marginLeft:"20px"}} to="/" label="الرئيسية" />
+            <MobileNavLink style={{ marginLeft: "20px" }} to="/" label="الرئيسية" />
             <MobileNavLink to="/sale-properties" label="عروض البيع" />
             <MobileNavLink to="/rent-properties" label="عروض الأجار" />
             <MobileNavLink to="/contact" label="اتصل بنا" />
@@ -106,15 +106,14 @@ const Navbar = () => {
 const NavLink = ({ to, label }) => {
   const location = useLocation();
   const isActive = location.pathname === to;
-  
+
   return (
     <Link
       to={to}
-      className={`relative px-2 py-1 text-sm font-medium transition-all duration-300 rounded-full ${
-        isActive 
-          ? "bg-gradient-primary text-white" 
+      className={`relative px-2 py-1 text-sm font-medium transition-all duration-300 rounded-full ${isActive
+          ? "bg-gradient-primary text-white"
           : "text-grey-800 hover:text-primary-600 hover:bg-grey-50"
-      }`}
+        }`}
     >
       {label}
       {!isActive && (
@@ -127,15 +126,14 @@ const NavLink = ({ to, label }) => {
 const MobileNavLink = ({ to, label }) => {
   const location = useLocation();
   const isActive = location.pathname === to;
-  
+
   return (
     <Link
       to={to}
-      className={`block px-3 py-1.5 rounded-lg text-center text-base font-medium transition-all duration-300 ${
-        isActive 
-          ? "bg-gradient-primary text-white shadow-md" 
+      className={`block px-3 py-1.5 rounded-lg text-center text-base font-medium transition-all duration-300 ${isActive
+          ? "bg-gradient-primary text-white shadow-md"
           : "bg-grey-50 text-grey-800 hover:bg-grey-100 hover:text-primary-600"
-      }`}
+        }`}
     >
       {label}
     </Link>

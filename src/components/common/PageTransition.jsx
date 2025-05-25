@@ -1,41 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 
 const PageTransition = ({ children }) => {
   const location = useLocation();
-  const [isExiting, setIsExiting] = useState(false);
-  const [currentChildren, setCurrentChildren] = useState(children);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    
-    if (children !== currentChildren) {
-      setIsExiting(true);
-      const timer = setTimeout(() => {
-        setCurrentChildren(children);
-        setIsExiting(false);
-      }, 300);
-      
-      return () => clearTimeout(timer);
-    }
-  }, [location, children]);
 
   return (
-    <div
-      className={`
-        will-change-transform
-        ${isExiting 
-          ? 'animate-page-exit' 
-          : 'animate-page-enter'
-        }
-      `}
-      style={{ 
-        minHeight: '50vh',
-        opacity: isExiting ? 0.5 : 1
-      }}
-    >
-      {currentChildren}
-    </div>
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={location.pathname}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.15 }}
+        style={{ position: 'relative', zIndex: 1 }}
+      >
+        {children}
+      </motion.div>
+    </AnimatePresence>
   );
 };
 

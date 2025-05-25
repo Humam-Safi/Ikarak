@@ -1,21 +1,58 @@
-import React, { createContext } from 'react';
-import { useState } from 'react';
+import React, { createContext, useState, useCallback } from 'react';
 
-export const Filter = createContext(null);
+export const FilterContext = createContext(null);
 
-const FilterContext = ({ children }) => {
-    const [filter, setFilter] = useState({
-      type: "الكل",
-      priceRange: [5000, 5000000],
-      bedrooms: "أي",
-      bathrooms: "أي",
-      area: [0, 500], // Adjusted max area based on data
-    });
+export const defaultFilter = {
+    type: 'الكل',
+    priceRange: [0, 5000000000],
+    bedrooms: 'أي',
+    bathrooms: 'أي',
+    areaRange: [0, 500],
+    location: 'الكل',
+    features: [],
+    status: 'الكل',
+    sortBy: 'date',
+    viewMode: 'grid',
+    currency: 'syp',
+};
+
+const FilterProvider = ({ children }) => {
+    const [filter, setFilter] = useState(defaultFilter);
+    const [filterHistory, setFilterHistory] = useState([]);
+
+    const updateFilter = useCallback((newFilter) => {
+        setFilter(prevFilter => {
+            const updatedFilter = typeof newFilter === 'function' ? newFilter(prevFilter) : newFilter;
+            setFilterHistory(prev => [...prev, prevFilter]);
+            return updatedFilter;
+        });
+    }, []);
+
+    const resetFilter = useCallback(() => {
+        setFilterHistory(prev => [...prev, filter]);
+        setFilter(defaultFilter);
+    }, [filter]);
+
+    const undoFilter = useCallback(() => {
+        if (filterHistory.length > 0) {
+            const previousFilter = filterHistory[filterHistory.length - 1];
+            setFilterHistory(prev => prev.slice(0, -1));
+            setFilter(previousFilter);
+        }
+    }, [filterHistory]);
+
     return (
-        <Filter.Provider value={{ filter, setFilter }}>
+        <FilterContext.Provider value={{ 
+            filter, 
+            setFilter: updateFilter, 
+            resetFilter, 
+            undoFilter,
+            defaultFilter,
+            canUndo: filterHistory.length > 0
+        }}>
             {children}
-        </Filter.Provider>
+        </FilterContext.Provider>
     );
-}
+};
 
-export default FilterContext;
+export default FilterProvider;
