@@ -1,10 +1,6 @@
 {
   "name": "omranak",
-<<<<<<< HEAD
-  "homepage" :"https://omranak.com",
-=======
   "homepage": "https://omranak.com",
->>>>>>> 8bdf4fc (upload)
   "private": true,
   "version": "0.0.0",
   "type": "module",
